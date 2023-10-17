@@ -1,1 +1,1 @@
-![monki-flip-monkey](https://github.com/JakubDrzala/PhoneBook/assets/118109173/0a0118fa-c0c3-4da1-bf17-8c12ba2f552f)
+![dancing-minion-dance-dacing-minion](https://github.com/JakubDrzala/PhoneBook/assets/118109173/909c1162-7e3b-4ca5-be3a-4b95c534e4a9)
