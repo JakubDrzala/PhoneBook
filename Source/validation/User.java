@@ -1,6 +1,3 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class User {
     public User(){
         isValidUser("Name","Surname","+1234567890","sdadawaf@daw.com");
