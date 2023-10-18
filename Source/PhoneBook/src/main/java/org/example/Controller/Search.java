@@ -2,13 +2,14 @@ package org.example.Controller;
 
 import java.sql.*;
 
-public class Search {
-    private Connection con;
-    public Search(Connection con){
-        this.con = con;
+public class Search extends DatabaseExtention{
+    public Search(Connection con) {
+        super(con);
     }
 
-    public void find(String querry){
-
+    public void find(String querry) throws SQLException{
+        Statement stmt = getCon().createStatement();
+        ResultSet rt = stmt.executeQuery(querry);
+        printResult(rt);
     }
 }

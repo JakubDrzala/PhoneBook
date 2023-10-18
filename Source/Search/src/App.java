@@ -71,7 +71,7 @@ public class App {
         try {
             while(rs.next()){
                 String out = "";
-                for(int x = 1; x < 6; x++){
+                for(int x = 1; x < rs.getRow(); x++){
                     out += rs.getString(x) + " ";
                 }
                 System.out.println(out);
