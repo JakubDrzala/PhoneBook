@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public abstract class DatabaseExtention {
+public abstract class DatabaseExtentsion {
     private Connection con;
-    public DatabaseExtention(Connection con){
+    public DatabaseExtentsion(Connection con){
         this.con = con;
     }
     public Connection getCon(){
