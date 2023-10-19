@@ -4,15 +4,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public abstract class DatabaseExtentsion {
-    private Connection con;
-    public DatabaseExtentsion(Connection con){
+public abstract class DatabaseExtention {
+    private Connection con; //connection
+    public DatabaseExtention(Connection con){
         this.con = con;
     }
     public Connection getCon(){
         return con;
-    }
-    public void printResult(ResultSet rs) throws SQLException {
+    } //getting connection but rn idk if this is neccesary lmao
+    public void printResult(ResultSet rs) throws SQLException { //printing given result
         int rowCount = 0;
         rs.last();
         rowCount = rs.getRow();
