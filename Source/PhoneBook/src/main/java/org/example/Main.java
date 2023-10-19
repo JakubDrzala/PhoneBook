@@ -17,7 +17,6 @@ public class Main {
         Connection con = DriverManager.getConnection(url, username, password);
         //up here is basic db connection that will be used often so dont fuck this up
 
-        System.out.println("SPERMA");
         Search search = new Search(con);
         //and here we have objects that are basically core for our project, each programmed by different co-workers so i really hope that this will cooperate
         List<String> gowno = search.getColumn("SELECT * from employees", 3);
