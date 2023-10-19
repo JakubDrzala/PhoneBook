@@ -34,20 +34,22 @@ public abstract class DatabaseExtentsion {
             System.out.println(out);
         }
     }
-    public List<String> getColumn(String querry, int column) throws SQLException{
+    public List<String> getSearch(String querry, int id) throws SQLException{
         List<String> out = new ArrayList<>();
-
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
 
-        System.out.println("sperma");
-        System.out.println(rs.getString(column) + " CUM");
-
+        do{
+            rs.next();
+        }while(Integer.parseInt(rs.getString(1)) != id);
+        for(int x = 1; x < rowCount; x++){
+            out.add(rs.getString(x));
+        }
         return out;
     }
     private ResultSet getResult(String querry) throws SQLException{
         //im to tired ,for this shit, but this function is basically for get ResultSet from a querry thats string, im sure that there will be multiple use cases for this function so i hope that i didnt fuck it up
-        Statement stmt = getCon().createStatement();
+        Statement stmt = getCon().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmt.executeQuery(querry);
         return rs;
     }
