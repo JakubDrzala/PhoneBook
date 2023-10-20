@@ -15,9 +15,9 @@
       <grid id="68528" binding="menuPanel" layout-manager="FormLayout">
         <rowspec value="center:30px:noGrow"/>
         <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="center:max(p;150px):noGrow"/>
+        <rowspec value="center:150px:noGrow"/>
         <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="center:max(p;4px):noGrow"/>
+        <rowspec value="center:30px:noGrow"/>
         <colspec value="fill:100px:grow"/>
         <colspec value="left:4dlu:noGrow"/>
         <colspec value="fill:120px:noGrow"/>
@@ -85,7 +85,9 @@
               <grid row="2" column="0" row-span="3" col-span="3" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-12631740"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="ec52a" class="javax.swing.JLabel">
@@ -104,7 +106,7 @@
                   <text value="Surname:"/>
                 </properties>
               </component>
-              <component id="d8e26" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="d8e26" class="javax.swing.JTextField" binding="nameAddInput">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -112,7 +114,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="615e7" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+              <component id="615e7" class="javax.swing.JTextField" binding="surnameAddInput">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -128,7 +130,7 @@
                   <text value="Number:"/>
                 </properties>
               </component>
-              <component id="de2d1" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+              <component id="de2d1" class="javax.swing.JTextField" binding="numberAddInput">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -144,7 +146,7 @@
                   <text value="e-mail:"/>
                 </properties>
               </component>
-              <component id="f38f7" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+              <component id="f38f7" class="javax.swing.JTextField" binding="emailAddInput">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -200,7 +202,7 @@
                   <text value="e-mail"/>
                 </properties>
               </component>
-              <component id="8409c" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+              <component id="8409c" class="javax.swing.JTextField" binding="emailSearchInput">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -232,7 +234,7 @@
                   <text value="Name:"/>
                 </properties>
               </component>
-              <component id="80cf9" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+              <component id="80cf9" class="javax.swing.JTextField" binding="numberSearchInput">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -240,7 +242,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="1fe39" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+              <component id="1fe39" class="javax.swing.JTextField" binding="surnameSearchInput">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -248,7 +250,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="d3b5d" class="javax.swing.JTextField" binding="textField8" default-binding="true">
+              <component id="d3b5d" class="javax.swing.JTextField" binding="nameSearchInput">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
