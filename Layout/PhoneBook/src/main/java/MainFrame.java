@@ -62,10 +62,16 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/employees";
+        String url = "jdbc:derby:employees;create=true";
         String username = "root";
         String password = "";
-        con = DriverManager.getConnection(url, username, password);
+        try {
+            con = DriverManager.getConnection(url);
+            System.out.println("dzuiala");
+        } catch (SQLException g) {
+            System.out.println(g);
+        }
+
 
         //main settings
         setContentPane(mainPanel);
@@ -196,7 +202,10 @@ public class MainFrame extends JFrame {
     private void search(String name, String surname, String number, String email) throws SQLException {
         Search search = new Search(con);
         List<String> inputs = new ArrayList<>();
-        inputs.add(name); inputs.add(surname); inputs.add(number); inputs.add(email);
+        inputs.add(name);
+        inputs.add(surname);
+        inputs.add(number);
+        inputs.add(email);
 
         final Object[][] DATA = search.search(inputs);           //here must DATA
 
