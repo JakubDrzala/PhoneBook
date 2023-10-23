@@ -47,7 +47,7 @@ public abstract class DatabaseExtentsion {
         }
         return out;
     }
-    private ResultSet getResult(String querry) throws SQLException{
+    public ResultSet getResult(String querry) throws SQLException{
         //im to tired ,for this shit, but this function is basically for get ResultSet from a querry thats string, im sure that there will be multiple use cases for this function so i hope that i didnt fuck it up
         Statement stmt = getCon().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmt.executeQuery(querry);

@@ -126,28 +126,6 @@ public class MainFrame extends JFrame {
     private void getData() {
         final Object[][] DATA = {
                 {"id", "name", "secondname", "phone", "email", "edit", "delete"},       //example of DATA
-                {1, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-                {2, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-                {3, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-                {4, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-                {5, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-                {6, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-                {7, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-                {8, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-                {9, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-                {10, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},   //example of DATA
-                {11, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-                {12, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-                {13, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-                {14, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-                {15, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-                {16, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-                {17, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-                {18, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-                {19, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-                {20, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-                {21, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-                {22, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
         };
 
 

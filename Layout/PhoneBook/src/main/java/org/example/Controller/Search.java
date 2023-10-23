@@ -18,7 +18,31 @@ public class Search extends DatabaseExtentsion {
         for(String input : inputs){
             input = input.toUpperCase();
         }
-        return null;
 
+        ResultSet rs = getResult("SELECT * FROM " + tableName);
+        String[] conditions = new String[4]; //conditions preparing
+        ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
+        while(rs.next()){
+            for (int x = 0; x < inputs.size(); x++){
+                if(inputs.get(x).equals("")){
+                    conditions[x] = "";
+                }
+                else if(rs.getString(x).toUpperCase().equals(inputs.get(x))){ //checking if db has exact input in itself and if so, then make statement with "="
+                    conditions[x] = rsmd.getColumnName(x + 1) + " = '" + inputs.get(x) + "'";
+                }
+                else{ //or else it will be LIKE
+                    conditions[x] = rsmd.getColumnName(x + 1) + "LIKE '%" + inputs.get(x) + "%'";
+                }
+            }
+        }
+        String querry = "SELECT * FROM " + tableName + " WHERE";
+        for(int x = 0; x < conditions.length; x++){
+            if(!conditions[x].equals("")){
+                querry += conditions[x] + " AND ";
+            }
+        }
+        querry = querry.substring(0, querry.length() - 5) + ";";
+
+        return querry;
     }
 }
