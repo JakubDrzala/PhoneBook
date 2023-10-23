@@ -62,11 +62,11 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:derby:employees;create=true";
+        String url = "jdbc:derby:C:\\Users\\kkile\\OneDrive\\Pulpit\\PhoneBook_repo\\Source\\PhoneBook\\src\\lib\\employees;create=true";
         String username = "root";
         String password = "";
         try {
-            con = DriverManager.getConnection(url);
+            con = DriverManager.getConnection(url, username, password);
             System.out.println("dziala");
         } catch (SQLException g) {
             System.out.println(g);
