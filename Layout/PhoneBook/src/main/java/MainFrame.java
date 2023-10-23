@@ -13,9 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.*;
 
 
@@ -57,18 +54,12 @@ public class MainFrame extends JFrame {
     private JLabel search_surname;
     private JLabel search_name;
 
-    private Connection con;
 
-    public MainFrame() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/ubercompany";
-        String username = "root";
-        String password = "";
-        Connection connection = DriverManager.getConnection(url, username, password);
-
+    public MainFrame() {
         //main settings
         setContentPane(mainPanel);
         setTitle("test");
-        setSize(700, 500);
+        setSize(750, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -99,24 +90,29 @@ public class MainFrame extends JFrame {
         addNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
+                resourceBundle = ResourceBundle.getBundle("Bundle", locale);
                 if (popUpAddNew.isVisible()) {
                     popUpAddNew.setVisible(false);
-                    addNewButton.setText("Add new");
+                    addNewButton.setText(resourceBundle.getString("add.new"));
                 } else {
                     popUpAddNew.setVisible(true);
-                    addNewButton.setText("Cancel");
+                    addNewButton.setText(resourceBundle.getString("cancel"));
                 }
             }
         });
         searchShowButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
+                resourceBundle = ResourceBundle.getBundle("Bundle", locale);
                 if (popUpSearch.isVisible()) {
                     popUpSearch.setVisible(false);
-                    searchShowButton.setText("Search");
+
+                    searchShowButton.setText(resourceBundle.getString("search"));
                 } else {
                     popUpSearch.setVisible(true);
-                    searchShowButton.setText("Hide");
+                    searchShowButton.setText(resourceBundle.getString("hide"));
                 }
             }
         });
@@ -163,13 +159,14 @@ public class MainFrame extends JFrame {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
-        addNewButton.setText(resourceBundle.getString("add"));
+        addNewButton.setText(resourceBundle.getString("add.new"));
         confirmToAddButton.setText(resourceBundle.getString("confirm"));
         searchShowButton.setText(resourceBundle.getString("search"));
         findButton.setText(resourceBundle.getString("find"));
         launguageLabel.setText(resourceBundle.getString("language"));
         columnNames = new String[]{"id", resourceBundle.getString("name"),
-                resourceBundle.getString("surname"), resourceBundle.getString("number"), resourceBundle.getString("email"), "edit", "delete"};
+                resourceBundle.getString("surname"), resourceBundle.getString("number"),
+                resourceBundle.getString("email"), "edit", "delete"};
         updateTable();
         add_name.setText(resourceBundle.getString("name"));
         add_surname.setText(resourceBundle.getString("surname"));
@@ -363,7 +360,7 @@ public class MainFrame extends JFrame {
     }
 
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         new MainFrame();
     }
 
@@ -389,7 +386,7 @@ public class MainFrame extends JFrame {
         mainPanel.setMinimumSize(new Dimension(550, 550));
         mainPanel.setPreferredSize(new Dimension(550, 550));
         menuPanel = new JPanel();
-        menuPanel.setLayout(new FormLayout("fill:100px:grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:82px:noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:150px:noGrow,top:4dlu:noGrow,center:30px:noGrow"));
+        menuPanel.setLayout(new FormLayout("fill:max(p;100px):grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:max(p;100px):noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:150px:noGrow,top:4dlu:noGrow,center:30px:noGrow"));
         mainPanel.add(menuPanel, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         addNewButton = new JButton();
         addNewButton.setText("Add new");
