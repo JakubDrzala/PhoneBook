@@ -3,6 +3,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+import org.example.Controller.Search;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +14,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.List;
 
 
 public class MainFrame extends JFrame {
@@ -54,8 +59,14 @@ public class MainFrame extends JFrame {
     private JLabel search_surname;
     private JLabel search_name;
 
+    private Connection con;
 
-    public MainFrame() {
+    public MainFrame() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/ubercompany";
+        String username = "root";
+        String password = "";
+        con = DriverManager.getConnection(url, username, password);
+
         //main settings
         setContentPane(mainPanel);
         setTitle("test");
@@ -118,7 +129,11 @@ public class MainFrame extends JFrame {
                 String surname = surnameSearchInput.getText();
                 String number = numberSearchInput.getText();
                 String email = emailSearchInput.getText();
-                search(name, surname, number, email);
+                try {
+                    search(name, surname, number, email);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         confirmToAddButton.addActionListener(new ActionListener() {
@@ -170,32 +185,15 @@ public class MainFrame extends JFrame {
         search_surname.setText(resourceBundle.getString("surname"));
         search_number.setText(resourceBundle.getString("number"));
         search_email.setText(resourceBundle.getString("email"));
-
+        titleLabel.setText(resourceBundle.getString("app.title"));
     }
 
-    private void search(String name, String surname, String number, String email) {
-        /*
+    private void search(String name, String surname, String number, String email) throws SQLException {
+        Search search = new Search(con);
+        List<String> inputs = new ArrayList<>();
+        inputs.add(name); inputs.add(surname); inputs.add(number); inputs.add(email);
 
-
-
-
-
-
-
-
-        SEARCH FUNCTION
-
-
-
-
-
-
-
-
-
-
-        */
-        final Object[][] DATA = {{}};           //here must DATA
+        final Object[][] DATA = search.search(inputs);           //here must DATA
 
         getData(DATA);                          //cutting new DATA after searching
         updateTable();     //update with new DATA
@@ -354,7 +352,7 @@ public class MainFrame extends JFrame {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         new MainFrame();
     }
 
