@@ -156,18 +156,26 @@ public class MainFrame extends JFrame {
     }
 
     private void setTexts() {
+
+        //changing texts in JSwing to selected language
+
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
-        addNewButton.setText(resourceBundle.getString("add.new"));
+
+        if (popUpAddNew.isVisible()) addNewButton.setText(resourceBundle.getString("cancel"));
+        else addNewButton.setText(resourceBundle.getString("add.new"));
+
         confirmToAddButton.setText(resourceBundle.getString("confirm"));
-        searchShowButton.setText(resourceBundle.getString("search"));
+
+        if (popUpSearch.isVisible()) searchShowButton.setText(resourceBundle.getString("hide"));
+        else searchShowButton.setText(resourceBundle.getString("search"));
+
         findButton.setText(resourceBundle.getString("find"));
         launguageLabel.setText(resourceBundle.getString("language"));
         columnNames = new String[]{"id", resourceBundle.getString("name"),
                 resourceBundle.getString("surname"), resourceBundle.getString("number"),
                 resourceBundle.getString("email"), "edit", "delete"};
-        updateTable();
         add_name.setText(resourceBundle.getString("name"));
         add_surname.setText(resourceBundle.getString("surname"));
         add_number.setText(resourceBundle.getString("number"));
@@ -177,7 +185,7 @@ public class MainFrame extends JFrame {
         search_number.setText(resourceBundle.getString("number"));
         search_email.setText(resourceBundle.getString("email"));
         titleLabel.setText(resourceBundle.getString("app.title"));
-
+        updateTable(); 
     }
 
     private void search(String name, String surname, String number, String email) {
