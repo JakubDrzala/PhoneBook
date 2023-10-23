@@ -60,20 +60,4 @@ public abstract class DatabaseExtentsion {
         ResultSet rs = stmt.executeQuery(querry);
         return rs;
     }
-/*
-    public static Connection ConnectDB() {
-
-        String url = "jdbc:mysql://localhost:3306/ubercompany";
-        String username = "root";
-        String password = "";
-
-        try {
-            Connection connection = DriverManager.getConnection(url, username, password);
-            return connection;
-            //connection.close();
-        } catch (SQLException e) {
-            return null;
-        }
-    }
- */
 }
