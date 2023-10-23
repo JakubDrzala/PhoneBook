@@ -14,5 +14,9 @@ public class Add extends DatabaseExtentsion{
         }catch(Exception e){
             System.out.println("cos sie zepsulo z dodawaniem <3");
         }
+
+        Connection conn=ConnectDB();
     }
+
+
 }

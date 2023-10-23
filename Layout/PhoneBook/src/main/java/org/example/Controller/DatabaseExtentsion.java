@@ -1,9 +1,6 @@
 package org.example.Controller;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,5 +54,18 @@ public abstract class DatabaseExtentsion {
         Statement stmt = getCon().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmt.executeQuery(querry);
         return rs;
+    }
+    public static Connection ConnectDB(){
+
+        String url = "jdbc:mysql://localhost:3306/ubercompany";
+        String username = "root";
+        String password = "";
+
+        try {
+            Connection connection = conn.getConnection(url, username, password);
+            return connection;
+            //connection.close();
+        } catch (SQLException e) {
+        }
     }
 }
