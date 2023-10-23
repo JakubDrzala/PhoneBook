@@ -19,7 +19,7 @@ public class Search extends DatabaseExtentsion {
             input = input.toUpperCase();
         }
 
-        ResultSet rs = getResult("SELECT * FROM " + tableName + ";");
+        ResultSet rs = getResult("SELECT * FROM " + tableName);
         String[] conditions = new String[4]; //conditions preparing
         ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
         while(rs.next()){
@@ -41,7 +41,7 @@ public class Search extends DatabaseExtentsion {
                 querry += conditions[x] + " AND "; //if not then adds condition and AND beetwen and at the end
             }
         }
-        querry = querry.substring(0, querry.length() - 5) + ";"; //removes last AND and inserts ;
+        querry = querry.substring(0, querry.length() - 5); //removes last AND
 
         return querry; //returns querry
     }
