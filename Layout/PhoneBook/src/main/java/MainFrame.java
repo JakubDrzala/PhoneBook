@@ -3,6 +3,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+import org.example.Controller.Search;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -183,27 +184,7 @@ public class MainFrame extends JFrame {
     }
 
     private void search(String name, String surname, String number, String email) {
-        /*
-
-
-
-
-
-
-
-
-        SEARCH FUNCTION
-
-
-
-
-
-
-
-
-
-
-        */
+        
         final Object[][] DATA = {{}};           //here must DATA
 
         getData(DATA);                          //cutting new DATA after searching
