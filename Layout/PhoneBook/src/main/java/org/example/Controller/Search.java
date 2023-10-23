@@ -24,7 +24,7 @@ public class Search extends DatabaseExtentsion {
         ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
         while(rs.next()){
             for (int x = 0; x < inputs.size(); x++){
-                if(inputs.get(x).equals("")){
+                if(inputs.get(x).equals("")){ //checking if input is null, bcs if so then there is no input
                     conditions[x] = "";
                 }
                 else if(rs.getString(x).toUpperCase().equals(inputs.get(x))){ //checking if db has exact input in itself and if so, then make statement with "="
