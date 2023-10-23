@@ -170,7 +170,7 @@ public class MainFrame extends JFrame {
         search_surname.setText(resourceBundle.getString("surname"));
         search_number.setText(resourceBundle.getString("number"));
         search_email.setText(resourceBundle.getString("email"));
-
+        titleLabel.setText(resourceBundle.getString("app.title"));
     }
 
     private void search(String name, String surname, String number, String email) {
