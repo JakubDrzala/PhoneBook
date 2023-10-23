@@ -74,6 +74,7 @@ public abstract class DatabaseExtentsion {
             return connection;
             //connection.close();
         } catch (SQLException e) {
+            return null;
         }
     }
 }
