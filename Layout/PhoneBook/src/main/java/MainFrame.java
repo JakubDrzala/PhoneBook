@@ -62,10 +62,8 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/ubercompany";
-        String username = "root";
-        String password = "";
-        con = DriverManager.getConnection(url, username, password);
+        String url = "jdbc:mysql://localhost:3306/employees";
+        con = DriverManager.getConnection(url);
 
         //main settings
         setContentPane(mainPanel);
