@@ -1,6 +1,7 @@
 package org.example.Controller;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Search extends DatabaseExtentsion {
@@ -45,11 +46,25 @@ public class Search extends DatabaseExtentsion {
         return querry;
     }
 
-    public Object[] search(List<String> inputs) throws SQLException {
+    public Object[][] search(List<String> inputs) throws SQLException {
         String querry = querryBuilder(inputs);
+        List<Object> outTemp = new ArrayList<>();
+        ResultSet rs = getResult(querry);
 
+        int x = 1;
+        while(rs.next()){
+            outTemp.add(getSearch(querry, x));
+            x++;
+        }
 
+        Object[][] out = new Object[getRowCount(rs)][outTemp.size()];
 
-        return null;
+        for (int y = 0; y < out[1].length; y++){
+            for(x = 0; x < out[0].length; x++){
+                out[x][y] = outTemp.get(x);
+            }
+        }
+
+        return out;
     }
 }

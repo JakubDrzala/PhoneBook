@@ -15,7 +15,7 @@ public abstract class DatabaseExtentsion {
     public Connection getCon(){
         return con;
     } //getting connection but rn idk if this is neccesary lmao
-    private int getRowCount(ResultSet rs) throws SQLException{ //getting row count from resultset
+    public int getRowCount(ResultSet rs) throws SQLException{ //getting row count from resultset
         int rowCount = 0;
         rs.last();
         rowCount = rs.getRow();
