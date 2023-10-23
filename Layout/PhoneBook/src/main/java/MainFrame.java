@@ -177,6 +177,7 @@ public class MainFrame extends JFrame {
         search_number.setText(resourceBundle.getString("number"));
         search_email.setText(resourceBundle.getString("email"));
         titleLabel.setText(resourceBundle.getString("app.title"));
+
     }
 
     private void search(String name, String surname, String number, String email) {
@@ -386,7 +387,7 @@ public class MainFrame extends JFrame {
         mainPanel.setMinimumSize(new Dimension(550, 550));
         mainPanel.setPreferredSize(new Dimension(550, 550));
         menuPanel = new JPanel();
-        menuPanel.setLayout(new FormLayout("fill:max(p;100px):grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:max(p;100px):noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:150px:noGrow,top:4dlu:noGrow,center:30px:noGrow"));
+        menuPanel.setLayout(new FormLayout("fill:120px:grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:max(p;100px):noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:150px:noGrow,top:4dlu:noGrow,center:30px:noGrow"));
         mainPanel.add(menuPanel, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         addNewButton = new JButton();
         addNewButton.setText("Add new");
