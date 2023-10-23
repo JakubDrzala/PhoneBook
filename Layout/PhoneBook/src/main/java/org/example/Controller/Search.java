@@ -19,7 +19,7 @@ public class Search extends DatabaseExtentsion {
             input = input.toUpperCase();
         }
 
-        ResultSet rs = getResult("SELECT * FROM " + tableName);
+        ResultSet rs = getResult("SELECT * FROM " + tableName + ";");
         String[] conditions = new String[4]; //conditions preparing
         ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
         while(rs.next()){
