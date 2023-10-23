@@ -22,6 +22,11 @@ public abstract class DatabaseExtentsion {
         rs.beforeFirst();
         return rowCount;
     }
+    public String getTableName() throws SQLException {
+        String[] types = {"TABLE"};
+        ResultSet tableNameRs = getCon().getMetaData().getTables(null, null, "%", types);
+        return tableNameRs.getString(0);
+    }
     public void printResult(String querry) throws SQLException { //printing given result for debuging
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);

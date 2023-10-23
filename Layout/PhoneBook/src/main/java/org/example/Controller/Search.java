@@ -10,9 +10,8 @@ public class Search extends DatabaseExtentsion {
 
     private String querryBuilder(List<String> inputs) throws SQLException{ //building querry for selecting in db
         //getting name of table to prevent dumbass customer from misspelling word EMPLOYEES in db bcs yes, and using language that we are not familiar with, bcs WHY THE FUCK NOT USE LANGUAGE THAT NO ONE GIVES A FUCK ABOUT IN FUCKING DATABASE IN WHICH EVERYTHING SHOULD BE NAMED, AND BY EVERYTHING I MEAN EVERYFUCKINGTHING, IN THE MOST INTERNATIONAL LANGUAGE WHICH IS ENGLISH
-        String[] types = {"TABLE"};
-        ResultSet tableNameRs = getCon().getMetaData().getTables(null, null, "%", types);
-        String tableName = tableNameRs.getString(0);
+
+        String tableName = getTableName();
 
         //i am to lazy to use tokenization so i will make sure that each input is the same as data in db
         for(String input : inputs){
@@ -46,9 +45,10 @@ public class Search extends DatabaseExtentsion {
         return querry;
     }
 
-    public String[][] search(List<String> inputs){
-        
+    public String[][] search(List<String> inputs) throws SQLException {
+        String querry = querryBuilder(inputs);
 
+        
         return null;
     }
 }
