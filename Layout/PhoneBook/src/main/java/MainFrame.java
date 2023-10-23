@@ -169,9 +169,14 @@ public class MainFrame extends JFrame {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
-        addNewButton.setText(resourceBundle.getString("add"));
+        if (popUpAddNew.isVisible()) addNewButton.setText(resourceBundle.getString("cancel"));
+        else addNewButton.setText(resourceBundle.getString("add.new"));
+
         confirmToAddButton.setText(resourceBundle.getString("confirm"));
-        searchShowButton.setText(resourceBundle.getString("search"));
+
+        if (popUpSearch.isVisible()) searchShowButton.setText(resourceBundle.getString("hide"));
+        else searchShowButton.setText(resourceBundle.getString("search"));
+
         findButton.setText(resourceBundle.getString("find"));
         launguageLabel.setText(resourceBundle.getString("language"));
         columnNames = new String[]{"id", resourceBundle.getString("name"),
