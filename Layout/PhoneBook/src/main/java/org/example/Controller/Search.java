@@ -45,10 +45,11 @@ public class Search extends DatabaseExtentsion {
         return querry;
     }
 
-    public String[][] search(List<String> inputs) throws SQLException {
+    public Object[] search(List<String> inputs) throws SQLException {
         String querry = querryBuilder(inputs);
 
-        
+
+
         return null;
     }
 }
