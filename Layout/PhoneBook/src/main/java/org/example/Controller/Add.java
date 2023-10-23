@@ -2,18 +2,17 @@ package org.example.Controller;
 
 import java.sql.*;
 public class Add extends DatabaseExtentsion{
-    public Add(Connection con) { //constructor for search based on abstract class
+    public Add(Connection con) {
         super(con);
     }
     public static void insert(String name, String surname, String number, String email){
 
-        //Connection conn=ConnectDB();
         try{
-            String query = "insert into customer values (null, '"+name+"', "+surname+"', '"+number+"', '"+email+"', '"+email+"')";
-
+            String query = "insert into employees values (null, '"+name+"', "+surname+"', '"+number+"', '"+email+"', '"+email+"')";
+            System.out.println(query + " zostalo dodane pomyslnie");
 
         }catch(Exception e){
-            System.out.println("coś jebło");
+            System.out.println("cos sie zepsulo z dodawaniem <3");
         }
     }
 }
