@@ -62,7 +62,7 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:derby:employees;create=true";
+        String url = "jdbc:derby:C:\\Users\\kkile\\OneDrive\\Pulpit\\PhoneBook_repo\\Source\\PhoneBook\\src\\lib\\employees;create=true";
         String username = "root";
         String password = "";
         try {
