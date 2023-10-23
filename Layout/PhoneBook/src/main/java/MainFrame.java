@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.List;
 
 
 public class MainFrame extends JFrame {
@@ -64,7 +65,7 @@ public class MainFrame extends JFrame {
         String url = "jdbc:mysql://localhost:3306/ubercompany";
         String username = "root";
         String password = "";
-        Connection connection = DriverManager.getConnection(url, username, password);
+        con = DriverManager.getConnection(url, username, password);
 
         //main settings
         setContentPane(mainPanel);
@@ -128,7 +129,11 @@ public class MainFrame extends JFrame {
                 String surname = surnameSearchInput.getText();
                 String number = numberSearchInput.getText();
                 String email = emailSearchInput.getText();
-                search(name, surname, number, email);
+                try {
+                    search(name, surname, number, email);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         confirmToAddButton.addActionListener(new ActionListener() {
@@ -183,9 +188,12 @@ public class MainFrame extends JFrame {
         titleLabel.setText(resourceBundle.getString("app.title"));
     }
 
-    private void search(String name, String surname, String number, String email) {
-        
-        final Object[][] DATA = {{}};           //here must DATA
+    private void search(String name, String surname, String number, String email) throws SQLException {
+        Search search = new Search(con);
+        List<String> inputs = new ArrayList<>();
+        inputs.add(name); inputs.add(surname); inputs.add(number); inputs.add(email);
+
+        final Object[][] DATA = search.search(inputs);           //here must DATA
 
         getData(DATA);                          //cutting new DATA after searching
         updateTable();     //update with new DATA

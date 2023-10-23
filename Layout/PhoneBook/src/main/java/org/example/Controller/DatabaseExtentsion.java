@@ -62,7 +62,7 @@ public abstract class DatabaseExtentsion {
         ResultSet rs = stmt.executeQuery(querry);
         return rs;
     }
-
+/*
     public static Connection ConnectDB() {
 
         String url = "jdbc:mysql://localhost:3306/ubercompany";
@@ -77,4 +77,5 @@ public abstract class DatabaseExtentsion {
             return null;
         }
     }
+ */
 }
