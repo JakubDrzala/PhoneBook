@@ -86,11 +86,11 @@
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
             </constraints>
             <properties>
-              <background color="-12631740"/>
+              <background color="-2957850"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="ec52a" class="javax.swing.JLabel">
+              <component id="ec52a" class="javax.swing.JLabel" binding="add_name">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -98,7 +98,7 @@
                   <text value="Name:"/>
                 </properties>
               </component>
-              <component id="ead03" class="javax.swing.JLabel">
+              <component id="ead03" class="javax.swing.JLabel" binding="add_surname">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -122,7 +122,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="12bc2" class="javax.swing.JLabel">
+              <component id="12bc2" class="javax.swing.JLabel" binding="add_number">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -138,7 +138,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="2ddc2" class="javax.swing.JLabel">
+              <component id="2ddc2" class="javax.swing.JLabel" binding="add_email">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -194,7 +194,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="f4b58" class="javax.swing.JLabel">
+              <component id="f4b58" class="javax.swing.JLabel" binding="search_email">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -210,7 +210,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="56941" class="javax.swing.JLabel">
+              <component id="56941" class="javax.swing.JLabel" binding="search_number">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -218,7 +218,7 @@
                   <text value="Number"/>
                 </properties>
               </component>
-              <component id="70a6c" class="javax.swing.JLabel">
+              <component id="70a6c" class="javax.swing.JLabel" binding="search_surname">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -226,7 +226,7 @@
                   <text value="Surname"/>
                 </properties>
               </component>
-              <component id="2b97f" class="javax.swing.JLabel">
+              <component id="2b97f" class="javax.swing.JLabel" binding="search_name">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
