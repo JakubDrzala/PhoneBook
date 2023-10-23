@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.*;
 
 
@@ -54,8 +57,14 @@ public class MainFrame extends JFrame {
     private JLabel search_surname;
     private JLabel search_name;
 
+    private Connection con;
 
-    public MainFrame() {
+    public MainFrame() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/ubercompany";
+        String username = "root";
+        String password = "";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
         //main settings
         setContentPane(mainPanel);
         setTitle("test");
@@ -354,7 +363,7 @@ public class MainFrame extends JFrame {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         new MainFrame();
     }
 

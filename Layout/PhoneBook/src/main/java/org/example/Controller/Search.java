@@ -8,7 +8,7 @@ public class Search extends DatabaseExtentsion {
         super(con);
     }
 
-    public String querryBuilder(List<String> inputs) throws SQLException{ //building querry for selecting in db
+    private String querryBuilder(List<String> inputs) throws SQLException{ //building querry for selecting in db
         //getting name of table to prevent dumbass customer from misspelling word EMPLOYEES in db bcs yes, and using language that we are not familiar with, bcs WHY THE FUCK NOT USE LANGUAGE THAT NO ONE GIVES A FUCK ABOUT IN FUCKING DATABASE IN WHICH EVERYTHING SHOULD BE NAMED, AND BY EVERYTHING I MEAN EVERYFUCKINGTHING, IN THE MOST INTERNATIONAL LANGUAGE WHICH IS ENGLISH
         String[] types = {"TABLE"};
         ResultSet tableNameRs = getCon().getMetaData().getTables(null, null, "%", types);
@@ -44,5 +44,9 @@ public class Search extends DatabaseExtentsion {
         querry = querry.substring(0, querry.length() - 5) + ";";
 
         return querry;
+    }
+
+    public String[][] search(String querry){
+
     }
 }
