@@ -42,7 +42,7 @@ public class MainFrame extends JFrame {
     private static ResourceBundle resourceBundle;
     private Object[][] tableData;
     private Object[] columnNames;
-    private Object[] sortBy = {0,"ascending"};
+    private Object[] sortBy = {0, "ascending"};
 
 
     public MainFrame() {
@@ -58,13 +58,11 @@ public class MainFrame extends JFrame {
         updateTable();
 
         //sort
-        table1.getTableHeader().addMouseListener(new MouseAdapter()
-        {
-            public void mouseClicked(MouseEvent e)
-            {
-                JTableHeader header = (JTableHeader)e.getSource();
-                Integer column = header.columnAtPoint( e.getPoint());
-                if(column<5)
+        table1.getTableHeader().addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                JTableHeader header = (JTableHeader) e.getSource();
+                Integer column = header.columnAtPoint(e.getPoint());
+                if (column < 5)
                     sort(column);
             }
         });
@@ -77,7 +75,6 @@ public class MainFrame extends JFrame {
         comboBoxLaunguage.addItem(Locale.GERMANY);
         setTexts();
         comboBoxLaunguage.addItemListener(itemEvent -> setTexts());
-
 
 
         addNewButton.addActionListener(new ActionListener() {
@@ -111,7 +108,7 @@ public class MainFrame extends JFrame {
                 String surname = surnameSearchInput.getText();
                 String number = numberSearchInput.getText();
                 String email = emailSearchInput.getText();
-                search(name,surname,number,email);
+                search(name, surname, number, email);
             }
         });
         confirmToAddButton.addActionListener(new ActionListener() {
@@ -121,55 +118,57 @@ public class MainFrame extends JFrame {
                 String surname = surnameAddInput.getText();
                 String number = numberAddInput.getText();
                 String email = emailAddInput.getText();
-                addNewElement(name,surname,number,email);
+                addNewElement(name, surname, number, email);
             }
         });
     }
 
-    private void getData(){
+    private void getData() {
         final Object[][] DATA = {
-            {"id", "name", "secondname", "phone", "email", "edit", "delete"},       //example of DATA
-            {1, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-            {2, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-            {3, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-            {4, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-            {5, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-            {6, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-            {7, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
-            {8, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
-            {9, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
-            {10, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},   //example of DATA
-            {11, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-            {12, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-            {13, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-            {14, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-            {15, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-            {16, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-            {17, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-            {18, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-            {19, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
-            {20, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
-            {21, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
-            {22, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
+                {"id", "name", "secondname", "phone", "email", "edit", "delete"},       //example of DATA
+                {1, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
+                {2, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
+                {3, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
+                {4, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
+                {5, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
+                {6, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
+                {7, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},     //example of DATA
+                {8, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},     //example of DATA
+                {9, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},   //example of DATA
+                {10, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},   //example of DATA
+                {11, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
+                {12, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
+                {13, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
+                {14, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
+                {15, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
+                {16, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
+                {17, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
+                {18, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
+                {19, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
+                {20, "name1", "secondname1", 12321, "ewq@eqw.qw", "edit", "delete"},    //example of DATA
+                {21, "name2", "secondname2", 65454, "kjl@eqw.qw", "edit", "delete"},    //example of DATA
+                {22, "name3", "secondname3", 97897, "asdas@eqw.qw", "edit", "delete"},  //example of DATA
         };
 
 
         //cutting DATA
-        tableData = Arrays.copyOfRange(DATA,1,DATA.length);
+        tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
         columnNames = DATA[0];
     }
-    private void getData(final Object[][] DATA){
+
+    private void getData(final Object[][] DATA) {
         //cutting DATA
-        tableData = Arrays.copyOfRange(DATA,1,DATA.length);
+        tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
         columnNames = DATA[0];
     }
-    private void setTexts(){
+
+    private void setTexts() {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
-        resourceBundle = ResourceBundle.getBundle("Bundle",locale);
+        resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
     }
 
-    private void search(String name, String surname, String number, String email){
+    private void search(String name, String surname, String number, String email) {
         /*
 
 
@@ -197,7 +196,7 @@ public class MainFrame extends JFrame {
         updateTable();     //update with new DATA
     }
 
-    private void addNewElement(String name, String surname, String number, String email){
+    private void addNewElement(String name, String surname, String number, String email) {
         /*
 
 
@@ -223,7 +222,7 @@ public class MainFrame extends JFrame {
         updateTable();
     }
 
-    private void updateTable(){
+    private void updateTable() {
         table1.setModel(new DefaultTableModel(tableData, columnNames));
         //add buttons to table
         table1.getColumn("edit").setCellRenderer(new ButtonRenderer());
@@ -240,11 +239,11 @@ public class MainFrame extends JFrame {
         table1.getColumnModel().getColumn(6).setMaxWidth(80);
     }
 
-    private void sort(Integer column){
+    private void sort(Integer column) {
         if (sortBy[0] == column) {
-            if (((String)sortBy[1]).equals("decreasing")) sortBy[1] = "ascending";
-            else if (((String)sortBy[1]).equals("ascending")) sortBy[1] = "decreasing";
-        }else sortBy = new Object[]{column, "ascending"};
+            if (((String) sortBy[1]).equals("decreasing")) sortBy[1] = "ascending";
+            else if (((String) sortBy[1]).equals("ascending")) sortBy[1] = "decreasing";
+        } else sortBy = new Object[]{column, "ascending"};
 
         String order = (String) sortBy[1];
 
@@ -254,9 +253,9 @@ public class MainFrame extends JFrame {
             ArrayList<String> list = new ArrayList<>();
             for (Object[] tableDatum : tableData) {
                 String value;
-                try{
+                try {
                     value = (String) tableDatum[column];
-                }catch (Exception e){
+                } catch (Exception e) {
                     value = Integer.toString((Integer) tableDatum[column]);
                 }
 
@@ -290,8 +289,8 @@ public class MainFrame extends JFrame {
                     localTableData[i[0]] = tableData[tableID];
                     i[0]++;
                 });
-            }else{
-                final int[] i = {tableData.length-1};
+            } else {
+                final int[] i = {tableData.length - 1};
                 sortedMap.forEach((id, value) -> {
                     int tableID = 0;
                     for (int j = 0; j < tableData.length; j++) {
@@ -303,7 +302,7 @@ public class MainFrame extends JFrame {
             }
             tableData = localTableData;
 
-        }else{
+        } else {
             ArrayList<Integer> columnData = new ArrayList<>();
             for (Object row[] : tableData) {
                 columnData.add((Integer) row[column]);
@@ -314,8 +313,8 @@ public class MainFrame extends JFrame {
             Object[][] localTableData = new Object[tableData.length][6];
             for (int i = 0; i < tableData.length; i++) {
                 int ID = 0;
-                for (int j = 0; j < tableData.length; j++){
-                    if(columnData.get(i).equals(tableData[j][0])) ID = j;
+                for (int j = 0; j < tableData.length; j++) {
+                    if (columnData.get(i).equals(tableData[j][0])) ID = j;
                 }
 //                ID = Integer.parseInt(Integer.toString(columnData.get(i))) - 1;
                 localTableData[i] = tableData[ID];
@@ -375,7 +374,7 @@ public class MainFrame extends JFrame {
         mainPanel.setMinimumSize(new Dimension(550, 550));
         mainPanel.setPreferredSize(new Dimension(550, 550));
         menuPanel = new JPanel();
-        menuPanel.setLayout(new FormLayout("fill:100px:grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:82px:noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:max(p;150px):noGrow,top:4dlu:noGrow,center:max(p;4px):noGrow"));
+        menuPanel.setLayout(new FormLayout("fill:100px:grow,left:4dlu:noGrow,fill:120px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:p:grow,left:4dlu:noGrow,fill:82px:noGrow,fill:30px:noGrow,fill:85px:noGrow,left:4dlu:noGrow,fill:95px:noGrow", "center:30px:noGrow,top:4dlu:noGrow,center:150px:noGrow,top:4dlu:noGrow,center:30px:noGrow"));
         mainPanel.add(menuPanel, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         addNewButton = new JButton();
         addNewButton.setText("Add new");
@@ -393,6 +392,7 @@ public class MainFrame extends JFrame {
         menuPanel.add(spacer1, cc.xy(3, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         popUpAddNew = new JPanel();
         popUpAddNew.setLayout(new GridLayoutManager(5, 2, new Insets(0, 5, 0, 0), -1, -1));
+        popUpAddNew.setBackground(new Color(-12631740));
         menuPanel.add(popUpAddNew, cc.xywh(1, 3, 3, 3, CellConstraints.LEFT, CellConstraints.TOP));
         final JLabel label1 = new JLabel();
         label1.setText("Name:");
