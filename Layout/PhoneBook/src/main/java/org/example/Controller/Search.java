@@ -46,7 +46,9 @@ public class Search extends DatabaseExtentsion {
         return querry;
     }
 
-    public String[][] search(String querry){
+    public String[][] search(List<String> inputs){
+        
+
         return null;
     }
 }

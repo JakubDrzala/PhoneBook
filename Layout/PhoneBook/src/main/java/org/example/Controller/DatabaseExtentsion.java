@@ -34,14 +34,14 @@ public abstract class DatabaseExtentsion {
             System.out.println(out);
         }
     }
-    public List<String> getSearch(String querry, int id) throws SQLException{ //processing querry through db and getting result with given id as string list
+    public List<String> getSearch(String querry, int id) throws SQLException{ //processing querry through db and getting one result
         List<String> out = new ArrayList<>();
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
 
         do{
             rs.next();
-        }while(Integer.parseInt(rs.getString(1)) != id);
+        }while(rs.getRow() == id + 1);
         for(int x = 1; x < rowCount; x++){
             out.add(rs.getString(x));
         }
