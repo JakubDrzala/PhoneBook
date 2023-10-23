@@ -15,7 +15,7 @@ public abstract class DatabaseExtentsion {
     public Connection getCon(){
         return con;
     } //getting connection but rn idk if this is neccesary lmao
-    private int getRowCount(ResultSet rs) throws SQLException{
+    private int getRowCount(ResultSet rs) throws SQLException{ //getting row count from resultset
         int rowCount = 0;
         rs.last();
         rowCount = rs.getRow();
@@ -34,7 +34,7 @@ public abstract class DatabaseExtentsion {
             System.out.println(out);
         }
     }
-    public List<String> getSearch(String querry, int id) throws SQLException{
+    public List<String> getSearch(String querry, int id) throws SQLException{ //processing querry through db and getting result with given id
         List<String> out = new ArrayList<>();
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
