@@ -22,7 +22,7 @@ public abstract class DatabaseExtentsion {
         rs.beforeFirst();
         return rowCount;
     }
-    public void printResult(String querry) throws SQLException { //printing given result
+    public void printResult(String querry) throws SQLException { //printing given result for debuging
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
 
@@ -34,7 +34,7 @@ public abstract class DatabaseExtentsion {
             System.out.println(out);
         }
     }
-    public List<String> getSearch(String querry, int id) throws SQLException{ //processing querry through db and getting result with given id
+    public List<String> getSearch(String querry, int id) throws SQLException{ //processing querry through db and getting result with given id as string list
         List<String> out = new ArrayList<>();
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
