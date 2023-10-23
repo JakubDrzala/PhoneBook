@@ -24,7 +24,7 @@ public abstract class DatabaseExtentsion {
     }
 
     public String getTableName() throws SQLException{
-        return "'employees'";
+        return "`employees`";
     }
 
     public void printResult(String querry) throws SQLException { //printing given result for debuging
