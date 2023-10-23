@@ -35,36 +35,36 @@ public class Search extends DatabaseExtentsion {
                 }
             }
         }
-        String querry = "SELECT * FROM " + tableName + " WHERE";
+        String querry = "SELECT * FROM " + tableName + " WHERE"; //querry to get all of the records
         for(int x = 0; x < conditions.length; x++){
-            if(!conditions[x].equals("")){
-                querry += conditions[x] + " AND ";
+            if(!conditions[x].equals("")){ //check if condition is not null
+                querry += conditions[x] + " AND "; //if not then adds condition and AND beetwen and at the end
             }
         }
-        querry = querry.substring(0, querry.length() - 5) + ";";
+        querry = querry.substring(0, querry.length() - 5) + ";"; //removes last AND and inserts ;
 
-        return querry;
+        return querry; //returns querry
     }
 
-    public Object[][] search(List<String> inputs) throws SQLException {
-        String querry = querryBuilder(inputs);
-        List<Object> outTemp = new ArrayList<>();
-        ResultSet rs = getResult(querry);
+    public Object[][] search(List<String> inputs) throws SQLException { //main search function
+        String querry = querryBuilder(inputs); //builds querry based on given inputs
+        List<Object> outTemp = new ArrayList<>(); //makes temporary list of lists
+        ResultSet rs = getResult(querry); //gets result out of querry
 
         int x = 1;
         while(rs.next()){
-            outTemp.add(getSearch(querry, x));
+            outTemp.add(getSearch(querry, x)); //adding record to tempoarary list
             x++;
         }
 
-        Object[][] out = new Object[getRowCount(rs)][outTemp.size()];
+        Object[][] out = new Object[getRowCount(rs)][outTemp.size()]; //preparing for returing everything
 
         for (int y = 0; y < out[1].length; y++){
             for(x = 0; x < out[0].length; x++){
-                out[x][y] = outTemp.get(x);
+                out[x][y] = outTemp.get(x); //trasfering from temporary to main out
             }
         }
 
-        return out;
+        return out; //returning everything in format perfect for oleks and tobaias ui
     }
 }
