@@ -23,10 +23,8 @@ public abstract class DatabaseExtentsion {
         return rowCount;
     }
 
-    public String getTableName() throws SQLException {
-        String[] types = {"TABLE"};
-        ResultSet tableNameRs = getCon().getMetaData().getTables(null, null, "%", types);
-        return tableNameRs.getString(0);
+    public String getTableName() throws SQLException{
+        return "employees";
     }
 
     public void printResult(String querry) throws SQLException { //printing given result for debuging
