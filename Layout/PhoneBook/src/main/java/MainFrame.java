@@ -67,7 +67,7 @@ public class MainFrame extends JFrame {
         String password = "";
         try {
             con = DriverManager.getConnection(url);
-            System.out.println("dzuiala");
+            System.out.println("dziala");
         } catch (SQLException g) {
             System.out.println(g);
         }
