@@ -3,7 +3,6 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
-import org.example.Controller.Search;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -14,11 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.*;
-import java.util.List;
 
 
 public class MainFrame extends JFrame {
@@ -43,21 +38,25 @@ public class MainFrame extends JFrame {
     private JLabel launguageLabel;
     private JLabel titleLabel;
     private JButton findButton;
+    private JLabel name1;
     private JButton ADD;
     private static ResourceBundle resourceBundle;
     private Object[][] tableData;
-    private Object[] columnNames;
+    private String[] columnNames = {"id", "Name", "Surname", "Phone Number", "e-mail", "edit", "delete"};
     private Object[] sortBy = {0, "ascending"};
 
-    private Connection con;
+    private JLabel add_name;
+    private JLabel add_surname;
+    private JLabel add_number;
+    private JLabel add_email;
+    private JLabel search_email;
+    private JLabel search_number;
+    private JLabel search_surname;
+    private JLabel search_name;
 
-    public MainFrame() throws SQLException {
+
+    public MainFrame() {
         //main settings
-        String url = "jdbc:mysql://localhost:3306/ubercompany";
-        String username = "root";
-        String password = "";
-        con = DriverManager.getConnection(url, username, password);
-
         setContentPane(mainPanel);
         setTitle("test");
         setSize(700, 500);
@@ -119,11 +118,7 @@ public class MainFrame extends JFrame {
                 String surname = surnameSearchInput.getText();
                 String number = numberSearchInput.getText();
                 String email = emailSearchInput.getText();
-                try {
-                    search(name, surname, number, email);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                search(name, surname, number, email);
             }
         });
         confirmToAddButton.addActionListener(new ActionListener() {
@@ -146,31 +141,60 @@ public class MainFrame extends JFrame {
 
         //cutting DATA
         tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
-        columnNames = DATA[0];
+
     }
 
     private void getData(final Object[][] DATA) {
         //cutting DATA
         tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
-        columnNames = DATA[0];
+
     }
 
     private void setTexts() {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
+        addNewButton.setText(resourceBundle.getString("add"));
+        confirmToAddButton.setText(resourceBundle.getString("confirm"));
+        searchShowButton.setText(resourceBundle.getString("search"));
+        findButton.setText(resourceBundle.getString("find"));
+        launguageLabel.setText(resourceBundle.getString("language"));
+        columnNames = new String[]{"id", resourceBundle.getString("name"),
+                resourceBundle.getString("surname"), resourceBundle.getString("number"), resourceBundle.getString("email"), "edit", "delete"};
+        updateTable();
+        add_name.setText(resourceBundle.getString("name"));
+        add_surname.setText(resourceBundle.getString("surname"));
+        add_number.setText(resourceBundle.getString("number"));
+        add_email.setText(resourceBundle.getString("email"));
+        search_name.setText(resourceBundle.getString("name"));
+        search_surname.setText(resourceBundle.getString("surname"));
+        search_number.setText(resourceBundle.getString("number"));
+        search_email.setText(resourceBundle.getString("email"));
+
     }
 
-    private void search(String name, String surname, String number, String email) throws SQLException {
-        Search search = new Search(con);
-        List<String> inputs = new ArrayList<String>();
-        inputs.add(name); inputs.add(surname); inputs.add(number); inputs.add(email); //adding inputs to inputs yes
+    private void search(String name, String surname, String number, String email) {
+        /*
 
-        String querry = search.querryBuilder(inputs); //making querry out of inputs very yes
 
-        System.out.println(querry);
-        search.getResult(querry);
 
+
+
+
+
+
+        SEARCH FUNCTION
+
+
+
+
+
+
+
+
+
+
+        */
         final Object[][] DATA = {{}};           //here must DATA
 
         getData(DATA);                          //cutting new DATA after searching
@@ -206,10 +230,10 @@ public class MainFrame extends JFrame {
     private void updateTable() {
         table1.setModel(new DefaultTableModel(tableData, columnNames));
         //add buttons to table
-        table1.getColumn("edit").setCellRenderer(new ButtonRenderer());
-        table1.getColumn("edit").setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
-        table1.getColumn("delete").setCellRenderer(new ButtonRenderer());
-        table1.getColumn("delete").setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
+        table1.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
+        table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, columnNames[5]));
+        table1.getColumnModel().getColumn(6).setCellRenderer(new ButtonRenderer());
+        table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, columnNames[6]));
         table1.setPreferredScrollableViewportSize(table1.getPreferredSize());
         table1.getColumnModel().getColumn(0).setMaxWidth(40);
         table1.getColumnModel().getColumn(1).setPreferredWidth(120);
@@ -307,6 +331,7 @@ public class MainFrame extends JFrame {
 
     }
 
+
     class ButtonRenderer extends JButton implements TableCellRenderer {
 
         public ButtonRenderer() {
@@ -329,7 +354,7 @@ public class MainFrame extends JFrame {
     }
 
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         new MainFrame();
     }
 
@@ -373,26 +398,26 @@ public class MainFrame extends JFrame {
         menuPanel.add(spacer1, cc.xy(3, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         popUpAddNew = new JPanel();
         popUpAddNew.setLayout(new GridLayoutManager(5, 2, new Insets(0, 5, 0, 0), -1, -1));
-        popUpAddNew.setBackground(new Color(-12631740));
+        popUpAddNew.setBackground(new Color(-2957850));
         menuPanel.add(popUpAddNew, cc.xywh(1, 3, 3, 3, CellConstraints.LEFT, CellConstraints.TOP));
-        final JLabel label1 = new JLabel();
-        label1.setText("Name:");
-        popUpAddNew.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label2 = new JLabel();
-        label2.setText("Surname:");
-        popUpAddNew.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        add_name = new JLabel();
+        add_name.setText("Name:");
+        popUpAddNew.add(add_name, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        add_surname = new JLabel();
+        add_surname.setText("Surname:");
+        popUpAddNew.add(add_surname, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         nameAddInput = new JTextField();
         popUpAddNew.add(nameAddInput, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         surnameAddInput = new JTextField();
         popUpAddNew.add(surnameAddInput, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        final JLabel label3 = new JLabel();
-        label3.setText("Number:");
-        popUpAddNew.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        add_number = new JLabel();
+        add_number.setText("Number:");
+        popUpAddNew.add(add_number, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         numberAddInput = new JTextField();
         popUpAddNew.add(numberAddInput, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        final JLabel label4 = new JLabel();
-        label4.setText("e-mail:");
-        popUpAddNew.add(label4, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        add_email = new JLabel();
+        add_email.setText("e-mail:");
+        popUpAddNew.add(add_email, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         emailAddInput = new JTextField();
         popUpAddNew.add(emailAddInput, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         confirmToAddButton = new JButton();
@@ -408,20 +433,20 @@ public class MainFrame extends JFrame {
         popUpSearch = new JPanel();
         popUpSearch.setLayout(new GridLayoutManager(5, 2, new Insets(0, 5, 0, 0), -1, -1));
         menuPanel.add(popUpSearch, cc.xywh(12, 3, 4, 3, CellConstraints.RIGHT, CellConstraints.BOTTOM));
-        final JLabel label5 = new JLabel();
-        label5.setText("e-mail");
-        popUpSearch.add(label5, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        search_email = new JLabel();
+        search_email.setText("e-mail");
+        popUpSearch.add(search_email, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         emailSearchInput = new JTextField();
         popUpSearch.add(emailSearchInput, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        final JLabel label6 = new JLabel();
-        label6.setText("Number");
-        popUpSearch.add(label6, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label7 = new JLabel();
-        label7.setText("Surname");
-        popUpSearch.add(label7, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label8 = new JLabel();
-        label8.setText("Name:");
-        popUpSearch.add(label8, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        search_number = new JLabel();
+        search_number.setText("Number");
+        popUpSearch.add(search_number, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        search_surname = new JLabel();
+        search_surname.setText("Surname");
+        popUpSearch.add(search_surname, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        search_name = new JLabel();
+        search_name.setText("Name:");
+        popUpSearch.add(search_name, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         numberSearchInput = new JTextField();
         popUpSearch.add(numberSearchInput, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         surnameSearchInput = new JTextField();
