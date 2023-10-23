@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-        String dbURL = "jdbc:derby:C:\\Users\\kkile\\OneDrive\\Pulpit\\PhoneBook_repo\\Source\\PhoneBook\\src\\lib\\employees;create=true";
+        String dbURL = "jdbc:derby:C:\\Users\\kkile\\OneDrive\\Pulpit\\PhoneBook_repo\\Layout\\PhoneBook\\src\\lib\\employees;create=true";
         Connection conn = DriverManager.getConnection(dbURL);
         //up here is basic db connection that will be used often so dont fuck this up
 
