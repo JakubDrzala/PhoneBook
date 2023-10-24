@@ -14,9 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 import java.util.List;
 
@@ -62,14 +60,25 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:derby:..//..//src//lib//employees;create=true";
+        String url = "jdbc:derby:C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees;create=true";
         String username = "root";
         String password = "";
         try {
             con = DriverManager.getConnection(url);
             System.out.println("dziala");
-        } catch (SQLException g) {
-            System.out.println(g);
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT TABLENAME FROM SYS.SYSTABLES WHERE TABLETYPE = 'T'");
+            while (rs.next()) {
+                System.out.println(rs.getString(1));
+            }
+        } catch (SQLException e) {
+            do {
+                System.out.println("\n----- SQLException -----");
+                System.out.println("  SQLState:   " + e.getSQLState());
+                System.out.println("  Error Code: " + e.getErrorCode());
+                System.out.println("  Message:    " + e.getMessage());
+                e = e.getNextException();
+            } while (e != null);
         }
 
 
