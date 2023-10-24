@@ -100,13 +100,13 @@ public class MainFrame extends JFrame {
         addNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (popUpAddNew.isVisible()) {
-                    popUpAddNew.setVisible(false);
-                    addNewButton.setText("Add new");
-                } else {
-                    popUpAddNew.setVisible(true);
-                    addNewButton.setText("Cancel");
-                }
+                Dialog addDialog = new Dialog(comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex()));
+                addDialog.pack();
+                addDialog.setVisible(true);
+
+                Object[] newRow = addDialog.getValues();
+
+                addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
             }
         });
         searchShowButton.addActionListener(new ActionListener() {
@@ -357,7 +357,114 @@ public class MainFrame extends JFrame {
             return this;
         }
     }
+    class ButtonEditor extends DefaultCellEditor {
 
+        protected JButton button;
+        private String label;
+        private boolean isPushed;
+        private JTable table;
+        private String actionType;
+
+        public ButtonEditor(JCheckBox checkBox, JTable table, String action) {
+            super(checkBox);
+            this.table = table;
+            actionType = action;
+            button = new JButton();
+            button.setOpaque(true);
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        fireEditingStopped();
+                    } catch (Exception x) {
+                    }
+                }
+            });
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value,
+                                                     boolean isSelected, int row, int column) {
+            if (isSelected) {
+                button.setForeground(table.getSelectionForeground());
+                button.setBackground(table.getSelectionBackground());
+            } else {
+                button.setForeground(table.getForeground());
+                button.setBackground(table.getBackground());
+            }
+            label = (value == null) ? "" : value.toString();
+            button.setText(label);
+            isPushed = true;
+            return button;
+        }
+
+        @Override
+        public Object getCellEditorValue() {
+            if (isPushed) {
+                switch (actionType) {
+                    case "edit":
+                        edit();
+                        break;
+                    case "delete":
+                        delete();
+                        break;
+                }
+            }
+            isPushed = false;
+            return label;
+        }
+
+        @Override
+        public boolean stopCellEditing() {
+            isPushed = false;
+            return super.stopCellEditing();
+        }
+
+        public void edit() {
+//            String newName = JOptionPane.showInputDialog(button, "Edit name:", tableData[table.getSelectedRow()][1].toString());
+//            tableData[table.getSelectedRow()][1] = newName;
+//            updateTable();
+
+            Dialog dialog = new Dialog(tableData[table.getSelectedRow()], comboBoxLaunguage.getSelectedIndex());
+            dialog.pack();
+            dialog.setVisible(true);
+            Object[] newRow = dialog.getValues();
+
+            System.out.println(newRow[1]);
+
+            tableData[table.getSelectedRow()] = newRow;
+            updateTable();
+
+
+        }
+
+        public void delete() {
+            Object[] options = new Object[]{"Delete this row",
+                    "Don't delete this row"};
+            int option = JOptionPane.showOptionDialog(
+                    button,
+                    "Are you sure?",
+                    "Delete",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]
+            );
+            if (option == 0) {
+                /*
+                
+                
+                            DELETE FUNCTION
+                
+                
+                */
+                getData();
+                updateTable();
+            }
+
+        }
+    }
 
     public static void main(String[] args) throws SQLException {
         new MainFrame();
@@ -478,74 +585,4 @@ public class MainFrame extends JFrame {
         return mainPanel;
     }
 
-}
-class ButtonEditor extends DefaultCellEditor {
-
-    protected JButton button;
-    private String label;
-    private boolean isPushed;
-    private JTable tableData;
-    private String actionType;
-
-    public ButtonEditor(JCheckBox checkBox,JTable table, String action) {
-        super(checkBox);
-        tableData = table;
-        actionType = action;
-        button = new JButton();
-        button.setOpaque(true);
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fireEditingStopped();
-            }
-        });
-    }
-
-    @Override
-    public Component getTableCellEditorComponent(JTable table, Object value,
-                                                 boolean isSelected, int row, int column) {
-        if (isSelected) {
-            button.setForeground(table.getSelectionForeground());
-            button.setBackground(table.getSelectionBackground());
-        } else {
-            button.setForeground(table.getForeground());
-            button.setBackground(table.getBackground());
-        }
-        label = (value == null) ? "" : value.toString();
-        button.setText(label);
-        isPushed = true;
-        return button;
-    }
-
-    @Override
-    public Object getCellEditorValue() {
-        if (isPushed) {
-            switch (actionType){
-                case "edit":
-                    edit();
-                    break;
-                case "delete":
-                    delete();
-                    break;
-            }
-        }
-        isPushed = false;
-        return label;
-    }
-
-    @Override
-    public boolean stopCellEditing() {
-        isPushed = false;
-        return super.stopCellEditing();
-    }
-
-    public void edit(){
-        JOptionPane.showMessageDialog(button, "edit - " + tableData.getSelectedRow());
-        // data.edit(tableData.getSelectedRow()) -- odw do metody do innej klassy i metody edit(int indexOfRow)
-    }
-
-    public void delete(){
-        JOptionPane.showMessageDialog(button, "delete - " + tableData.getSelectedRow());
-        // data.delete(tableData.getSelectedRow()) -- odw do metody do innej klassy i metody delete(int indexOfRow)
-    }
 }
