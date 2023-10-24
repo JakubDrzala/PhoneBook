@@ -11,6 +11,7 @@ import org.example.Controller.Modify;
 import org.example.Controller.Search;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
@@ -111,7 +112,7 @@ public class MainFrame extends JFrame {
 
                 try {
 
-                    if(!addDialog.isCancel) 
+                    if(!addDialog.isCancel)
                     addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
@@ -259,6 +260,7 @@ public class MainFrame extends JFrame {
         table1.getColumnModel().getColumn(4).setPreferredWidth(160);
         table1.getColumnModel().getColumn(5).setMaxWidth(80);
         table1.getColumnModel().getColumn(6).setMaxWidth(80);
+        table1.getTableHeader().setReorderingAllowed(false);
     }
 
     private void sort(Integer column) {
