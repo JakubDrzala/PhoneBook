@@ -52,7 +52,7 @@ public class Search extends DatabaseExtentsion {
 
         printResult(querry);
 
-        Object[][] out = new Object[getRowCount(rs)][6];
+        Object[][] out = new Object[getRowCount(rs)][7];
 
 //        rs.first();
         int y = 0;
@@ -63,6 +63,8 @@ public class Search extends DatabaseExtentsion {
             out[y][2] = rs.getString(2);
             out[y][3] = rs.getString(2);
             out[y][4] = rs.getString(2);
+            out[y][5] = "edit";
+            out[y][6] = "delete";
             y++;
         };
 
