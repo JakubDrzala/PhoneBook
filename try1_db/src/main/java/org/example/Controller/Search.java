@@ -46,23 +46,25 @@ public class Search extends DatabaseExtentsion {
         return querry; //returns querry
     }
 
-    public String[][] search(List<String> inputs) throws SQLException { //main search function
+    public Object[][] search(List<String> inputs) throws SQLException { //main search function
         String querry = querryBuilder(inputs); //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
 
         printResult(querry);
 
-        String[][] out = new String[6][getRowCount(rs)];
+        Object[][] out = new Object[getRowCount(rs)][6];
 
-        rs.first();
+//        rs.first();
         int y = 0;
-        do{
-            for(int x = 0; x < 5; x++){
-                out[y][x] = rs.getString(x + 1);
-            }
+//        do
+        while(rs.next()){
+            out[y][0] = rs.getInt(1);
+            out[y][1] = rs.getString(2);
+            out[y][2] = rs.getString(2);
+            out[y][3] = rs.getString(2);
+            out[y][4] = rs.getString(2);
             y++;
-        }
-        while(rs.next());
+        };
 
         return out;
     }
