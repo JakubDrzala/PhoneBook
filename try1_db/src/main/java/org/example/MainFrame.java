@@ -69,21 +69,6 @@ public class MainFrame extends JFrame {
             conn = DriverManager.getConnection(dbURL);
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
-
-            // Extract data from result set
-            while (rs.next())
-            {
-                // Retrieve by column name
-                int id  = rs.getInt("id");
-                String name = rs.getString("name");
-
-                // Display values
-                System.out.print("ID: " + id);
-                System.out.println(", Name: " + name);
-            }
-            rs.close();
-            stmt.close();
-            conn.close();
         }
         catch (SQLException e)
         {
