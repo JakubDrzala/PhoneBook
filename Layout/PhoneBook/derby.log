@@ -1,239 +1,116 @@
-<<<<<<< HEAD
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.validation in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.database.slave in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.classManagerJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.netServer.autoStart in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.access.btree in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.nativeAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.access.uniquewithduplicatenullssort in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.jdbcJ8 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.daemon in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.lf in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.uuidJ1 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.cryptographyJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.timerJ1 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore.transaction in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.cryptographyJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.resourceAdapterJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.access.sort in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.JNDIAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.basicAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.tcf in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.database in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.ef in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.streams in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.lcf in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore.log.readonly in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.lockManagerJ6 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.dataDictionary in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.resourceAdapterJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.rawStore.data.genericJ4 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.XPLAINFactory in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.resourceAdapterJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore.log in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.cryptographyJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.resultSetStatisticsFactory in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.access.heap in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.dvfJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.optimizer in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.jdbcJ8 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.cacheManagerJ6 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.mgmt.jmx in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.lockManagerJ6 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.replication.master in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.NoneAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore.data.genericJ4 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.jdbcJ8 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore.data.genericJ1 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.cacheManagerJ6 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.classes.dvfJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.dvfJ2 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.replication.slave in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.javaCompiler in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.specificAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.mgmt.null in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.rawStore in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.JNDIAuthentication in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.module.access in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.rawStore.data.genericJ1 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.mgmt.jmx in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main] Ignored duplicate property derby.env.jdk.rawStore.data.genericJ4 in jar:file:/C:/Users/kacpe/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
+Tue Oct 24 13:17:45 CEST 2023 Thread[main,5,main]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 ----------------------------------------------------------------
-Tue Oct 24 09:46:38 CEST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-018b-60a6-613e-000007124ab0 
-on database directory C:\Users\student\Documents\PhoneBook\src\lib\employees with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa 
-Loaded from file:/C:/Users/student/Documents/PhoneBook/Layout/PhoneBook/src/lib/derby.jar
+Tue Oct 24 13:17:45 CEST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-018b-6167-a9f2-000007bd1ba0 
+on database directory null with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6f94fa3e 
+Loaded from file:/C:/Users/kacpe/Documents/GitHub/PhoneBook/Layout/PhoneBook/src/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=17.0.4.1+1-LTS-2
-user.dir=C:\Users\student\Documents\PhoneBook\Layout\PhoneBook
+java.runtime.version=17.0.1+12-LTS-39
+user.dir=C:\Users\kacpe\Documents\GitHub\PhoneBook\Layout\PhoneBook
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-=======
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.validation in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.database.slave in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.classManagerJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.netServer.autoStart in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.access.btree in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.nativeAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.access.uniquewithduplicatenullssort in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.jdbcJ8 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.daemon in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.lf in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.uuidJ1 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.cryptographyJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.timerJ1 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore.transaction in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.cryptographyJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.resourceAdapterJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.access.sort in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.JNDIAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.basicAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.tcf in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.database in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.ef in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.streams in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.lcf in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore.log.readonly in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.lockManagerJ6 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.dataDictionary in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.resourceAdapterJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.rawStore.data.genericJ4 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.XPLAINFactory in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.resourceAdapterJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore.log in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.cryptographyJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.resultSetStatisticsFactory in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.access.heap in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.dvfJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.optimizer in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.jdbcJ8 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.cacheManagerJ6 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.mgmt.jmx in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.lockManagerJ6 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.replication.master in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.NoneAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore.data.genericJ4 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.jdbcJ8 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore.data.genericJ1 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.cacheManagerJ6 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.classes.dvfJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.dvfJ2 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.replication.slave in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.javaCompiler in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.specificAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.mgmt.null in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.rawStore in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.JNDIAuthentication in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.module.access in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.rawStore.data.genericJ1 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.mgmt.jmx in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Ignored duplicate property derby.env.jdk.rawStore.data.genericJ4 in jar:file:/C:/Users/kkile/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar!/org/apache/derby/modules.properties
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-Tue Oct 24 11:09:11 CEST 2023 Thread[#1,main,5,main] Cleanup action starting
-java.sql.SQLException: Failed to start database 'C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees' with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2f0e140b, see the next exception for details.
+Tue Oct 24 13:17:47 CEST 2023 Thread[main,5,main] Cleanup action starting
+java.sql.SQLException: Database 'C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.seeNextException(Util.java:252)
-	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2848)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:406)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3208)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:767)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:437)
 	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:630)
 	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
 	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:922)
 	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:253)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
 	at MainFrame.<init>(MainFrame.java:67)
 	at MainFrame.main(MainFrame.java:379)
-Caused by: ERROR XJ040: Failed to start database 'C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees' with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2f0e140b, see the next exception for details.
+Caused by: ERROR XJ004: Database 'C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees' not found.
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	... 12 more
-Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database C:\Users\kkile\OneDrive\Pulpit\PhoneBook_repo\Layout\PhoneBook\src\lib\employees.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1942)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(BaseDataFileFactory.java:2900)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(BaseDataFileFactory.java:1883)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(BaseDataFileFactory.java:339)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.raw.RawStore.bootServiceModule(RawStore.java:2880)
-	at org.apache.derby.impl.store.raw.RawStore.boot(RawStore.java:185)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.access.RAMAccessManager.bootServiceModule(RAMAccessManager.java:1332)
-	at org.apache.derby.impl.store.access.RAMAccessManager.boot(RAMAccessManager.java:1035)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.db.BasicDatabase.bootServiceModule(BasicDatabase.java:945)
-	at org.apache.derby.impl.db.BasicDatabase.bootStore(BasicDatabase.java:773)
-	at org.apache.derby.impl.db.BasicDatabase.boot(BasicDatabase.java:182)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1817)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(BaseMonitor.java:1683)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(BaseMonitor.java:1516)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(BaseMonitor.java:988)
-	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Monitor.java:598)
-	at org.apache.derby.impl.jdbc.EmbedConnection.startPersistentService(EmbedConnection.java:3994)
-	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2809)
-	... 9 more
+	... 14 more
 ============= begin nested exception, level (1) ===========
-java.sql.SQLException: Another instance of Derby may have already booted the database C:\Users\kkile\OneDrive\Pulpit\PhoneBook_repo\Layout\PhoneBook\src\lib\employees.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:230)
-	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2846)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:406)
+ERROR XJ004: Database 'C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees' not found.
+	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3208)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:767)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:437)
 	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:630)
 	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
 	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:922)
 	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:253)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
 	at MainFrame.<init>(MainFrame.java:67)
 	at MainFrame.main(MainFrame.java:379)
-Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database C:\Users\kkile\OneDrive\Pulpit\PhoneBook_repo\Layout\PhoneBook\src\lib\employees.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1942)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(BaseDataFileFactory.java:2900)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(BaseDataFileFactory.java:1883)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(BaseDataFileFactory.java:339)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.raw.RawStore.bootServiceModule(RawStore.java:2880)
-	at org.apache.derby.impl.store.raw.RawStore.boot(RawStore.java:185)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.access.RAMAccessManager.bootServiceModule(RAMAccessManager.java:1332)
-	at org.apache.derby.impl.store.access.RAMAccessManager.boot(RAMAccessManager.java:1035)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.db.BasicDatabase.bootServiceModule(BasicDatabase.java:945)
-	at org.apache.derby.impl.db.BasicDatabase.bootStore(BasicDatabase.java:773)
-	at org.apache.derby.impl.db.BasicDatabase.boot(BasicDatabase.java:182)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1817)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(BaseMonitor.java:1683)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(BaseMonitor.java:1516)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(BaseMonitor.java:988)
-	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Monitor.java:598)
-	at org.apache.derby.impl.jdbc.EmbedConnection.startPersistentService(EmbedConnection.java:3994)
-	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2809)
-	... 9 more
 ============= end nested exception, level (1) ===========
-============= begin nested exception, level (2) ===========
-ERROR XSDB6: Another instance of Derby may have already booted the database C:\Users\kkile\OneDrive\Pulpit\PhoneBook_repo\Layout\PhoneBook\src\lib\employees.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1942)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(BaseDataFileFactory.java:2900)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(BaseDataFileFactory.java:1883)
-	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(BaseDataFileFactory.java:339)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.raw.RawStore.bootServiceModule(RawStore.java:2880)
-	at org.apache.derby.impl.store.raw.RawStore.boot(RawStore.java:185)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.store.access.RAMAccessManager.bootServiceModule(RAMAccessManager.java:1332)
-	at org.apache.derby.impl.store.access.RAMAccessManager.boot(RAMAccessManager.java:1035)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(BaseMonitor.java:527)
-	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Monitor.java:460)
-	at org.apache.derby.impl.db.BasicDatabase.bootServiceModule(BasicDatabase.java:945)
-	at org.apache.derby.impl.db.BasicDatabase.bootStore(BasicDatabase.java:773)
-	at org.apache.derby.impl.db.BasicDatabase.boot(BasicDatabase.java:182)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(BaseMonitor.java:1989)
-	at org.apache.derby.impl.services.monitor.TopService.bootModule(TopService.java:334)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1817)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(BaseMonitor.java:1683)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(BaseMonitor.java:1516)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(BaseMonitor.java:988)
-	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Monitor.java:598)
-	at org.apache.derby.impl.jdbc.EmbedConnection.startPersistentService(EmbedConnection.java:3994)
-	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2809)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:406)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:630)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:922)
-	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:253)
-	at MainFrame.<init>(MainFrame.java:67)
-	at MainFrame.main(MainFrame.java:379)
-============= end nested exception, level (2) ===========
 Cleanup action completed
->>>>>>> b44b8ed1e4f229492adc85cdc010f60f0f71310d
