@@ -62,32 +62,8 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            String dbURL = "jdbc:derby:MyDbTest;create=true";
-            conn = DriverManager.getConnection(dbURL);
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
-        }
-        catch (SQLException e)
-        {
-            // TODO handle exception
-            e.printStackTrace();
-        }
-        finally
-        {
-            // Clean-up environment
-            try
-            {
-                if (stmt != null) stmt.close();
-                if (conn != null) conn.close();
-            }
-            catch (SQLException e)
-            {
-                e.printStackTrace();
-            }
-        }
+        String dbURL = "jdbc:derby:WORKERS;create=true";
+        con = DriverManager.getConnection(dbURL);
 
 
         //main settings
