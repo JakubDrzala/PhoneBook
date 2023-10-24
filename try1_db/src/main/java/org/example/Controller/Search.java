@@ -52,17 +52,18 @@ public class Search extends DatabaseExtentsion {
 
         printResult(querry);
 
-        String[][] out = new String[getRowCount(rs)][5];
-        System.out.println(getSearch(querry, 1).size() + " " + getRowCount(rs));
+        String[][] out = new String[6][getRowCount(rs)];
 
-        for(int y = 0; y < getRowCount(rs); y++){
-            List<String> temp = getSearch(querry, y + 1);
-            for(int x = 0; x < temp.size(); x++){
-                out[y][x] = temp.get(x);
-                System.out.print(out[y][x]);
+        rs.first();
+        int y = 0;
+        do{
+            for(int x = 0; x < 5; x++){
+                out[y][x] = rs.getString(x + 1);
             }
-            System.out.println("");
+            y++;
         }
+        while(rs.next());
+
         return out;
     }
 }

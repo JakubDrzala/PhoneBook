@@ -40,19 +40,6 @@ public abstract class DatabaseExtentsion {
         }
     }
 
-    public List<String> getSearch(String querry, int id) throws SQLException { //processing querry through db and getting one result
-        List<String> out = new ArrayList<>();
-        ResultSet rs = getResult(querry);
-        int rowCount = getRowCount(rs);
-
-        do {
-            rs.next();
-        } while (rs.getRow() == id + 1);
-        for (int x = 1; x < rowCount; x++) {
-            out.add(rs.getString(x));
-        }
-        return out;
-    }
 
     public ResultSet getResult(String querry) throws SQLException {
         //im to tired ,for this shit, but this function is basically for get ResultSet from a querry thats string, im sure that there will be multiple use cases for this function so i hope that i didnt fuck it up
