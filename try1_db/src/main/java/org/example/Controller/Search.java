@@ -24,7 +24,7 @@ public class Search extends DatabaseExtentsion {
         ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
         while(rs.next()){
             for (int x = 0; x < inputs.size(); x++){
-                if(inputs.get(x) == null){ //checking if input is null, bcs if so then there is no input
+                if(inputs.get(x).equals("")){ //checking if input is null, bcs if so then there is no input
                     conditions[x] = "";
                 }
                 else if(rs.getString(x + 2).toUpperCase().equals(inputs.get(x))){ //checking if db has exact input in itself and if so, then make statement with "="
@@ -46,17 +46,23 @@ public class Search extends DatabaseExtentsion {
         return querry; //returns querry
     }
 
-    public List<Object> search(List<String> inputs) throws SQLException { //main search function
+    public String[][] search(List<String> inputs) throws SQLException { //main search function
         String querry = querryBuilder(inputs); //builds querry based on given inputs
-        List<Object> outTemp = new ArrayList<>(); //makes temporary list of lists
         ResultSet rs = getResult(querry); //gets result out of querry
 
-        int x = 1;
-        while(rs.next()) {
-            outTemp.add(getSearch(querry, x)); //adding record to tempoarary list
-            x++;
+        printResult(querry);
+
+        String[][] out = new String[getRowCount(rs)][5];
+        System.out.println(getSearch(querry, 1).size() + " " + getRowCount(rs));
+
+        for(int y = 0; y < getRowCount(rs); y++){
+            List<String> temp = getSearch(querry, y + 1);
+            for(int x = 0; x < temp.size(); x++){
+                out[y][x] = temp.get(x);
+                System.out.print(out[y][x]);
+            }
+            System.out.println("");
         }
-        
-        return outTemp; //returning everything in format perfect for oleks and tobaias ui
+        return out;
     }
 }

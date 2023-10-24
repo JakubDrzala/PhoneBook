@@ -154,13 +154,13 @@ public class MainFrame extends JFrame {
 
 
         //cutting DATA
-        tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
+        tableData = Arrays.copyOfRange(DATA, 0, DATA.length);
 
     }
 
     private void getData(final Object[][] DATA) {
         //cutting DATA
-        tableData = Arrays.copyOfRange(DATA, 1, DATA.length);
+        tableData = Arrays.copyOfRange(DATA, 0, DATA.length);
 
     }
 

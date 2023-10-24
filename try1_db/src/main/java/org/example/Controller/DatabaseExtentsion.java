@@ -33,7 +33,7 @@ public abstract class DatabaseExtentsion {
 
         while (rs.next()) {
             String out = "";
-            for (int x = 1; x < rowCount; x++) {
+            for (int x = 1; x < 6; x++) {
                 out += rs.getString(x) + " ";
             }
             System.out.println(out);
