@@ -24,7 +24,7 @@ public abstract class DatabaseExtentsion {
     }
 
     public String getTableName() throws SQLException{
-        return "'employees'";
+        return "employees";
     }
 
     public void printResult(String querry) throws SQLException { //printing given result for debuging
@@ -57,7 +57,7 @@ public abstract class DatabaseExtentsion {
     public ResultSet getResult(String querry) throws SQLException {
         //im to tired ,for this shit, but this function is basically for get ResultSet from a querry thats string, im sure that there will be multiple use cases for this function so i hope that i didnt fuck it up
         System.out.println(querry);
-        Statement stmt = getCon().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        return stmt.executeQuery(querry);
+        Statement stmt = con.createStatement();
+        return stmt.executeQuery("SELECT * FROM employees");
     }
 }
