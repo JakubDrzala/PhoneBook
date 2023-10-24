@@ -1,3 +1,5 @@
+package org.example;
+
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -60,25 +62,46 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
-        String url = "jdbc:derby:C://Users//kkile//OneDrive//Pulpit//PhoneBook_repo//Layout//PhoneBook//src//lib//employees;create=true";
-        String username = "root";
-        String password = "";
+        Connection conn = null;
+        Statement stmt = null;
         try {
-            con = DriverManager.getConnection(url);
-            System.out.println("dziala");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT TABLENAME FROM SYS.SYSTABLES WHERE TABLETYPE = 'T'");
-            while (rs.next()) {
-                System.out.println(rs.getString(1));
+            String dbURL = "jdbc:derby:MyDbTest;create=true";
+            conn = DriverManager.getConnection(dbURL);
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
+
+            // Extract data from result set
+            while (rs.next())
+            {
+                // Retrieve by column name
+                int id  = rs.getInt("id");
+                String name = rs.getString("name");
+
+                // Display values
+                System.out.print("ID: " + id);
+                System.out.println(", Name: " + name);
             }
-        } catch (SQLException e) {
-            do {
-                System.out.println("\n----- SQLException -----");
-                System.out.println("  SQLState:   " + e.getSQLState());
-                System.out.println("  Error Code: " + e.getErrorCode());
-                System.out.println("  Message:    " + e.getMessage());
-                e = e.getNextException();
-            } while (e != null);
+            rs.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException e)
+        {
+            // TODO handle exception
+            e.printStackTrace();
+        }
+        finally
+        {
+            // Clean-up environment
+            try
+            {
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
         }
 
 
