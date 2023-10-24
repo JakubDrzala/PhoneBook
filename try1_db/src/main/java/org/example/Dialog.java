@@ -24,7 +24,7 @@ public class Dialog extends JDialog {
     private JLabel numberLabel;
     private JLabel emailLabel;
     private Object[] Data;
-    private String nameRegex = "^[a-zA-Z.'-]+";
+    private String nameRegex = "\\b[A-Z]{1}[a-zA-Z.'-]+";
     private String phoneNumberRegex = "\\+[0-9]{10,15}";
     private String mailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
 

@@ -72,7 +72,7 @@ public class MainFrame extends JFrame {
         //main settings
         setContentPane(mainPanel);
         setTitle("test");
-        setSize(700, 500);
+        setSize(800, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -90,8 +90,8 @@ public class MainFrame extends JFrame {
             }
         });
 
-        popUpAddNew.setVisible(false);
         popUpSearch.setVisible(false);
+        findButton.setVisible(false);
 
         //launguage settings
         comboBoxLaunguage.addItem(Locale.US);
@@ -114,6 +114,12 @@ public class MainFrame extends JFrame {
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+                try {
+                    getData();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                updateTable();
             }
         });
         searchShowButton.addActionListener(new ActionListener() {
@@ -121,9 +127,11 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (popUpSearch.isVisible()) {
                     popUpSearch.setVisible(false);
+                    findButton.setVisible(false);
                     searchShowButton.setText("Search");
                 } else {
                     popUpSearch.setVisible(true);
+                    findButton.setVisible(true);
                     searchShowButton.setText("Hide");
                 }
             }
@@ -137,20 +145,6 @@ public class MainFrame extends JFrame {
                 String email = emailSearchInput.getText();
                 try {
                     search(name, surname, number, email);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
-        confirmToAddButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String name = nameAddInput.getText();
-                String surname = surnameAddInput.getText();
-                String number = numberAddInput.getText();
-                String email = emailAddInput.getText();
-                try {
-                    addNewElement(name, surname, number, email);
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -186,10 +180,8 @@ public class MainFrame extends JFrame {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
         setTitle(resourceBundle.getString("app.title"));
-        if (popUpAddNew.isVisible()) addNewButton.setText(resourceBundle.getString("cancel"));
-        else addNewButton.setText(resourceBundle.getString("add.new"));
+        addNewButton.setText(resourceBundle.getString("add.new"));
 
-        confirmToAddButton.setText(resourceBundle.getString("confirm"));
 
         if (popUpSearch.isVisible()) searchShowButton.setText(resourceBundle.getString("hide"));
         else searchShowButton.setText(resourceBundle.getString("search"));
@@ -199,10 +191,6 @@ public class MainFrame extends JFrame {
         columnNames = new String[]{"id", resourceBundle.getString("name"),
                 resourceBundle.getString("surname"), resourceBundle.getString("number"), resourceBundle.getString("email"), "edit", "delete"};
         updateTable();
-        add_name.setText(resourceBundle.getString("name"));
-        add_surname.setText(resourceBundle.getString("surname"));
-        add_number.setText(resourceBundle.getString("number"));
-        add_email.setText(resourceBundle.getString("email"));
         search_name.setText(resourceBundle.getString("name"));
         search_surname.setText(resourceBundle.getString("surname"));
         search_number.setText(resourceBundle.getString("number"));
