@@ -8,7 +8,7 @@ public class Add extends DatabaseExtentsion{
     public static void insert(String name, String surname, String number, String email){
 
         try{
-            String query = "insert into employees values (null, '"+name+"', "+surname+"', '"+number+"', '"+email+"', '"+email+"')";
+            String query = "insert into employees values (null, '"+name+"', '"+surname+"', '"+number+"', '"+email+"')";
             System.out.println(query + " zostalo dodane pomyslnie");
 
         }catch(Exception e){

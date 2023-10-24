@@ -5,6 +5,9 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+import org.example.Controller.Add;
+import org.example.Controller.Delete;
+import org.example.Controller.Modify;
 import org.example.Controller.Search;
 
 import javax.swing.*;
@@ -106,7 +109,11 @@ public class MainFrame extends JFrame {
 
                 Object[] newRow = addDialog.getValues();
 
-                addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
+                try {
+                    addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         searchShowButton.addActionListener(new ActionListener() {
@@ -142,24 +149,35 @@ public class MainFrame extends JFrame {
                 String surname = surnameAddInput.getText();
                 String number = numberAddInput.getText();
                 String email = emailAddInput.getText();
-                addNewElement(name, surname, number, email);
+                try {
+                    addNewElement(name, surname, number, email);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
 
-    private void getData() {
-        final Object[][] DATA = {
-                {"id", "name", "secondname", "phone", "email", "edit", "delete"},       //example of DATA
-        };
+    private void getData() throws SQLException {
+        Object[][] DATA = new Object[][]{};
 
+        Search search = new Search(con);
+        try{
+            DATA = search.getAll();
+        }catch (Exception error){
+            System.out.println(error);
+        }
 
         //cutting DATA
-        tableData = Arrays.copyOfRange(DATA, 0, DATA.length);
+        tableData = DATA;
 
     }
 
     private void getData(final Object[][] DATA) {
         //cutting DATA
+
+
+
         tableData = Arrays.copyOfRange(DATA, 0, DATA.length);
 
     }
@@ -206,7 +224,7 @@ public class MainFrame extends JFrame {
         updateTable();     //update with new DATA
     }
 
-    private void addNewElement(String name, String surname, String number, String email) {
+    private void addNewElement(String name, String surname, String number, String email) throws SQLException {
         /*
 
 
@@ -228,6 +246,9 @@ public class MainFrame extends JFrame {
 
 
         */
+        Add addElement = new Add(con);
+        addElement.insert(name,surname,number,email);
+
         getData();
         updateTable();
     }
@@ -376,8 +397,7 @@ public class MainFrame extends JFrame {
                 public void actionPerformed(ActionEvent e) {
                     try {
                         fireEditingStopped();
-                    } catch (Exception x) {
-                    }
+                    }catch (Exception error){}
                 }
             });
         }
@@ -403,10 +423,11 @@ public class MainFrame extends JFrame {
             if (isPushed) {
                 switch (actionType) {
                     case "edit":
-                        edit();
+                            edit();
                         break;
                     case "delete":
-                        delete();
+                            delete();
+
                         break;
                 }
             }
@@ -424,16 +445,21 @@ public class MainFrame extends JFrame {
 //            String newName = JOptionPane.showInputDialog(button, "Edit name:", tableData[table.getSelectedRow()][1].toString());
 //            tableData[table.getSelectedRow()][1] = newName;
 //            updateTable();
-
-            Dialog dialog = new Dialog(tableData[table.getSelectedRow()], comboBoxLaunguage.getSelectedIndex());
+            int row = table.getSelectedRow();
+            Dialog dialog = new Dialog(tableData[row], comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex()));
             dialog.pack();
 
             dialog.setVisible(true);
             Object[] newRow = dialog.getValues();
 
-            System.out.println(newRow[1]);
-
-            tableData[table.getSelectedRow()] = newRow;
+            Modify modify = new Modify(con);
+            modify.setId(Integer.parseInt(newRow[0].toString()));
+            try{
+                modify.modify(newRow[1].toString(),newRow[2].toString(),newRow[3].toString(),newRow[4].toString());
+            }catch (Exception error){
+                System.out.println(error);
+            }
+            tableData[row] = newRow;
             updateTable();
 
 
@@ -460,7 +486,17 @@ public class MainFrame extends JFrame {
                 
                 
                 */
-                getData();
+                int id = Integer.parseInt(tableData[table.getSelectedRow()][0].toString());
+                Delete delete = new Delete(con);
+                delete.setId(id);
+                try{
+                    delete.delete();
+                    getData();
+
+                }catch (Exception error){
+                    System.out.println(error);
+                }
+                ;
                 updateTable();
             }
 
