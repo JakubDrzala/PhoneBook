@@ -110,6 +110,8 @@ public class MainFrame extends JFrame {
                 Object[] newRow = addDialog.getValues();
 
                 try {
+
+                    if(!addDialog.isCancel) 
                     addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
@@ -234,6 +236,7 @@ public class MainFrame extends JFrame {
 
 
         */
+
         Add addElement = new Add(con);
         addElement.insert(name,surname,number,email);
 

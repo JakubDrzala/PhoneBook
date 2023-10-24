@@ -27,6 +27,7 @@ public class Dialog extends JDialog {
     private String nameRegex = "\\b[A-Z]{1}[a-zA-Z.'-]+";
     private String phoneNumberRegex = "\\+[0-9]{10,15}";
     private String mailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
+    boolean isCancel = false;
 
     public Dialog(Object index) {
         this.Data = new Object[]{null, "", "", "", "", "edit", "delete"};
@@ -130,6 +131,7 @@ public class Dialog extends JDialog {
 
     private void onCancel() {
         // add your code here if necessary
+        isCancel = true;
         dispose();
     }
 
