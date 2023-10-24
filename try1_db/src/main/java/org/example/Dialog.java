@@ -1,3 +1,5 @@
+package org.example;
+
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 
@@ -6,6 +8,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+
 
 public class Dialog extends JDialog {
     private JPanel contentPane;
@@ -109,7 +113,7 @@ public class Dialog extends JDialog {
             isValid = false;
             emailLabel.setForeground(new Color(255, 0, 0));
         } else {
-            emailField.setForeground(new Color(0, 0, 0));
+            emailLabel.setForeground(new Color(0, 0, 0));
         }
         if (isValid) {
             Data[1] = nameField.getText();

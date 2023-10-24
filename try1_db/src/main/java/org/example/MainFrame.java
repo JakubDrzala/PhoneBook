@@ -427,6 +427,7 @@ public class MainFrame extends JFrame {
 
             Dialog dialog = new Dialog(tableData[table.getSelectedRow()], comboBoxLaunguage.getSelectedIndex());
             dialog.pack();
+
             dialog.setVisible(true);
             Object[] newRow = dialog.getValues();
 
