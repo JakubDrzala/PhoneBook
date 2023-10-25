@@ -1,1 +1,1 @@
-![rat-spinning](https://github.com/JakubDrzala/PhoneBook/assets/118109173/c28307af-97d2-462c-9aa2-1d532070562e)
+![](https://github.com/JakubDrzala/PhoneBook/blob/main/Szczur/ezgif-1-07c0869bc6.gif)
