@@ -11,8 +11,6 @@ public class Search extends DatabaseExtentsion {
     private String querryBuilder(List<String> inputs) throws SQLException{ //building querry for selecting in db
         //getting name of table to prevent dumbass customer from misspelling word EMPLOYEES in db bcs yes, and using language that we are not familiar with, bcs WHY THE FUCK NOT USE LANGUAGE THAT NO ONE GIVES A FUCK ABOUT IN FUCKING DATABASE IN WHICH EVERYTHING SHOULD BE NAMED, AND BY EVERYTHING I MEAN EVERYFUCKINGTHING, IN THE MOST INTERNATIONAL LANGUAGE WHICH IS ENGLISH
 
-        String tableName = getTableName();
-
         boolean isNull = true;
         //i am to lazy to use tokenization so i will make sure that each input is the same as data in db
         for(int x = 0; x < inputs.size(); x++){
@@ -42,7 +40,7 @@ public class Search extends DatabaseExtentsion {
                     }
                 }
             }
-            querry = "SELECT * FROM " + tableName + " WHERE "; //querry to get all of the records
+            querry = "SELECT * FROM employees WHERE "; //querry to get all of the records
             for (int x = 0; x < conditions.length; x++) {
                 if (!conditions[x].equals("")) { //check if condition is not null
                     querry += conditions[x] + " AND "; //if not then adds condition and AND beetwen and at the end
@@ -50,7 +48,7 @@ public class Search extends DatabaseExtentsion {
             }
             querry = querry.substring(0, querry.length() - 5); //removes last AND
         }else{
-            querry = "SELECT * FROM " + tableName;
+            querry = "SELECT * FROM employees";
         }
         System.out.println(querry);
         return querry; //returns querry
