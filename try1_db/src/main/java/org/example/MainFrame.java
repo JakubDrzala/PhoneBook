@@ -70,7 +70,6 @@ public class  MainFrame extends JFrame {
                 break;
             case "USER":
                 break;
-            case "EXIT":
             default:
                 System.exit(0);
         }
