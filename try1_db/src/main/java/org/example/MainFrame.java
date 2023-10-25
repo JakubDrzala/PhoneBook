@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.List;
 
 
-public class MainFrame extends JFrame {
+public class  MainFrame extends JFrame {
     private JPanel mainPanel;
     private JButton addNewButton;
     private JComboBox comboBoxLaunguage;
@@ -61,7 +61,8 @@ public class MainFrame extends JFrame {
         con = DriverManager.getConnection(dbURL);
 
         PermissionsManager permMan = new PermissionsManager(con);
-        String typeOfUser = permMan.checkPassword(login, password);
+        Encrypt enc = new Encrypt();
+        String typeOfUser = permMan.checkPassword(login, password); //permMan.checkPassword(login, enc.encrypt(password));
 
         switch (typeOfUser){
             case "ADMIN":
