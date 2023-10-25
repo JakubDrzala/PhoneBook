@@ -12,10 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.*;
 import java.util.*;
 import java.util.List;
@@ -26,7 +23,7 @@ public class MainFrame extends JFrame {
     private JButton addNewButton;
     private JComboBox comboBoxLaunguage;
     public JTable table1;
-    private JButton searchShowButton;
+    private JButton clearFilters;
     private JTextField emailSearchInput;
     private JTextField numberSearchInput;
     private JTextField surnameSearchInput;
@@ -82,8 +79,7 @@ public class MainFrame extends JFrame {
             }
         });
 
-        popUpSearch.setVisible(false);
-        findButton.setVisible(false);
+        
 
         //launguage settings
         comboBoxLaunguage.addItem(Locale.US);
@@ -131,7 +127,8 @@ public class MainFrame extends JFrame {
                 find();
             }
         });
-	nameSearchInput.addKeyListener(new KeyAdapter() {
+
+        nameSearchInput.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 find();
@@ -218,7 +215,7 @@ public class MainFrame extends JFrame {
 
         final Object[][] DATA = search.searchFor(inputs);           //here must DATA
 
-        getData(DATA);                          //cutting new DATA after searching
+        tableData=DATA;                      //cutting new DATA after searching
         updateTable();     //update with new DATA
     }
 
@@ -524,9 +521,9 @@ public class MainFrame extends JFrame {
         menuPanel.add(titleLabel, cc.xy(7, 1, CellConstraints.CENTER, CellConstraints.DEFAULT));
         final Spacer spacer1 = new Spacer();
         menuPanel.add(spacer1, cc.xy(3, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
-        searchShowButton = new JButton();
-        searchShowButton.setText("Search");
-        menuPanel.add(searchShowButton, cc.xy(11, 5, CellConstraints.RIGHT, CellConstraints.BOTTOM));
+        clearFilters = new JButton();
+        clearFilters.setText("Search");
+        menuPanel.add(clearFilters, cc.xy(11, 5, CellConstraints.RIGHT, CellConstraints.BOTTOM));
         final Spacer spacer2 = new Spacer();
         menuPanel.add(spacer2, cc.xy(11, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         final Spacer spacer3 = new Spacer();
