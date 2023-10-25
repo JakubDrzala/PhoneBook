@@ -50,15 +50,12 @@ public class Search extends DatabaseExtentsion {
         }else{
             querry = "SELECT * FROM employees";
         }
-        System.out.println(querry);
         return querry; //returns querry
     }
 
     public Object[][] searchFor(List<String> inputs) throws SQLException { //main search function
         String querry = querryBuilder(inputs); //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
-
-        System.out.println(querry);
 
         Object[][] out = new Object[getRowCount(rs)][7];
 
@@ -81,8 +78,6 @@ public class Search extends DatabaseExtentsion {
     public Object[][] getAll() throws SQLException { //main search function
         String querry = "SELECT * FROM employees"; //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
-
-        printResult(querry);
 
         Object[][] out = new Object[getRowCount(rs)][7];
 
