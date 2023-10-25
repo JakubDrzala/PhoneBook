@@ -23,10 +23,6 @@ public abstract class DatabaseExtentsion {
         return rowCount;
     }
 
-    public String getTableName() throws SQLException{
-        return "employees";
-    }
-
     public void printResult(String querry) throws SQLException { //printing given result for debuging
         ResultSet rs = getResult(querry);
         int rowCount = getRowCount(rs);
