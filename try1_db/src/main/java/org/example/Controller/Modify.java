@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class Modify extends DatabaseExtentsion{
     private int id;
-    private Statement stm = null;
 
     public Modify(Connection con){
         super(con);

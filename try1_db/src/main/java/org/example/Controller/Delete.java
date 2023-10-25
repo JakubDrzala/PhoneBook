@@ -7,7 +7,6 @@ import java.sql.Statement;
 public class Delete extends DatabaseExtentsion{
 
     private int id;
-    private Statement stm = null;
 
     public Delete(Connection con){
         super(con);
