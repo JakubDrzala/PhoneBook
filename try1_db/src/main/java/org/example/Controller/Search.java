@@ -23,7 +23,7 @@ public class Search extends DatabaseExtentsion {
         ResultSet rs = getResult("SELECT * FROM employees");
         String querry;
         if (!isNull) {
-            String[] conditions = new String[4]; //conditions preparing
+            String[] conditions = new String[5]; //conditions preparing
             ResultSetMetaData rsmd = rs.getMetaData(); //getting metadata for column names
             while (rs.next()) {
                 for (int x = 0; x < inputs.size(); x++) {
@@ -57,18 +57,18 @@ public class Search extends DatabaseExtentsion {
         String querry = querryBuilder(inputs); //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
 
-        Object[][] out = new Object[getRowCount(rs)][7];
+        Object[][] out = new Object[getRowCount(rs)][8];
 
 //        rs.first();
         int y = 0;
 //        do
         while(rs.next()){
             out[y][0] = rs.getInt(1);
-            for(int x = 1; x < 5; x++){
+            for(int x = 1; x < 6; x++){
                 out[y][x] = rs.getString(x + 1);
             }
-            out[y][5] = "edit";
-            out[y][6] = "delete";
+            out[y][6] = "edit";
+            out[y][7] = "delete";
             y++;
         };
 
@@ -79,8 +79,7 @@ public class Search extends DatabaseExtentsion {
         String querry = "SELECT * FROM employees"; //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
 
-        Object[][] out = new Object[getRowCount(rs)][7];
-
+        Object[][] out = new Object[getRowCount(rs)][8];
 //        rs.first();
         int y = 0;
 //        do
@@ -90,8 +89,9 @@ public class Search extends DatabaseExtentsion {
             out[y][2] = rs.getString(3);
             out[y][3] = rs.getString(4);
             out[y][4] = rs.getString(5);
-            out[y][5] = "edit";
-            out[y][6] = "delete";
+            out[y][5] = rs.getString(5);
+            out[y][6] = "edit";
+            out[y][7] = "delete";
             y++;
         };
 

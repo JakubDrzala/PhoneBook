@@ -36,15 +36,16 @@ public class MainFrame extends JFrame {
     private JButton findButton;
     private static ResourceBundle resourceBundle;
     private Object[][] tableData;
-    private String[] columnNames = {"id", "Name", "Surname", "Phone Number", "e-mail", "edit", "delete"};
+    private String[] columnNames = {"id", "Name", "Surname", "Phone Number", "e-mail","newCol", "edit", "delete"};
     private Object[] sortBy = {0, "ascending"};
     private JLabel search_email;
     private JLabel search_number;
     private JLabel search_surname;
     private JLabel search_name;
+    private JTextField newColSearchInput;
 
     private Connection con;
-    private boolean editAbleTable;
+    private boolean editAbleTable = false;
 
     public MainFrame() throws SQLException {
 	Login loginFrame = new Login();
@@ -171,7 +172,7 @@ public class MainFrame extends JFrame {
                 updateTable();
             }
         });
-        editAbleTable = false;
+        editAbleTable = true;
     }
 
     private void find(){
@@ -179,8 +180,9 @@ public class MainFrame extends JFrame {
         String surname = surnameSearchInput.getText();
         String number = numberSearchInput.getText();
         String email = emailSearchInput.getText();
+        String newCol = newColSearchInput.getText();
         try {
-            search(name, surname, number, email);
+            search(name, surname, number, email, newCol);
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
@@ -215,6 +217,7 @@ public class MainFrame extends JFrame {
                 resourceBundle.getString("surname"),
                 resourceBundle.getString("number"),
                 resourceBundle.getString("email"),
+                "newCol",
                 resourceBundle.getString("edit"),
                 resourceBundle.getString("delete")};
         updateTable();
@@ -225,13 +228,14 @@ public class MainFrame extends JFrame {
         titleLabel.setText(resourceBundle.getString("app.title"));
     }
 
-    private void search(String name, String surname, String number, String email) throws SQLException {
+    private void search(String name, String surname, String number, String email, String newCol) throws SQLException {
         Search search = new Search(con);
         List<String> inputs = new ArrayList<>();
         inputs.add(name);
         inputs.add(surname);
         inputs.add(number);
         inputs.add(email);
+        inputs.add(newCol);
 
         final Object[][] DATA = search.searchFor(inputs);           //here must DATA
 
@@ -252,10 +256,10 @@ public class MainFrame extends JFrame {
         table1.setModel(new DefaultTableModel(tableData, columnNames));
         //add buttons to table
         if (editAbleTable) {
-            table1.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
-            table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
             table1.getColumnModel().getColumn(6).setCellRenderer(new ButtonRenderer());
-            table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
+            table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
+            table1.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+            table1.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
         }
         table1.setPreferredScrollableViewportSize(table1.getPreferredSize());
         table1.getColumnModel().getColumn(0).setMaxWidth(40);
@@ -263,8 +267,9 @@ public class MainFrame extends JFrame {
         table1.getColumnModel().getColumn(2).setPreferredWidth(120);
         table1.getColumnModel().getColumn(3).setPreferredWidth(120);
         table1.getColumnModel().getColumn(4).setPreferredWidth(160);
-        table1.getColumnModel().getColumn(5).setMaxWidth(80);
+        table1.getColumnModel().getColumn(5).setPreferredWidth(120);
         table1.getColumnModel().getColumn(6).setMaxWidth(80);
+        table1.getColumnModel().getColumn(7).setMaxWidth(80);
         table1.getTableHeader().setReorderingAllowed(false);
     }
 

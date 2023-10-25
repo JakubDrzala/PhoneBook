@@ -1,10 +1,7 @@
 package org.example;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 public class Login extends JDialog {
     private JPanel contentPane;
@@ -20,7 +17,8 @@ public class Login extends JDialog {
         setSize(200,200);
         setResizable(false);
         setModal(true);
-
+        textField1.setText("Cieszyn16");
+        passwordField1.setText("haslo");
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -33,6 +31,20 @@ public class Login extends JDialog {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                onSubmit();
+            }
+        });
+        textField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if("Enter".equals(KeyEvent.getKeyText(e.getKeyChar()))){
+                    passwordField1.requestFocus();
+                }
+            }
+        });
+        passwordField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
                 onSubmit();
             }
         });

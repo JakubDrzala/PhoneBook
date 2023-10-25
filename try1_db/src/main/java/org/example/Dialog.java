@@ -23,10 +23,13 @@ public class Dialog extends JDialog {
     private JLabel surnameLabel;
     private JLabel numberLabel;
     private JLabel emailLabel;
+    private JTextField newColField;
+    private JLabel newColLabel;
     private Object[] Data;
     private String nameRegex = "\\b[A-Z]{1}[a-zA-Z.'-]+";
     private String phoneNumberRegex = "\\+[0-9]{10,15}";
     private String mailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
+    private String newColRegex = "^[a-zA-Z.'-]+";
     boolean isCancel = false;
 
     public Dialog(Object index) {
@@ -38,15 +41,16 @@ public class Dialog extends JDialog {
     public Dialog(Object[] Data, Object index) {
         this.Data = Data;
         setTexts(index);
+        nameField.setText(Data[1].toString());
+        surnameField.setText(Data[2].toString());
+        numberField.setText(Data[3].toString());
+        emailField.setText(Data[4].toString());
+        newColField.setText(Data[5].toString());
         start();
     }
 
     private void start() {
         setContentPane(contentPane);
-        nameField.setText(Data[1].toString());
-        surnameField.setText(Data[2].toString());
-        numberField.setText(Data[3].toString());
-        emailField.setText(Data[4].toString());
         setSize(300, 300);
         setResizable(false);
         setModal(true);
@@ -116,11 +120,18 @@ public class Dialog extends JDialog {
         } else {
             emailLabel.setForeground(new Color(0, 0, 0));
         }
+        if (!newColField.getText().matches(newColRegex)) {
+            isValid = false;
+            newColLabel.setForeground(new Color(255, 0, 0));
+        } else {
+            newColLabel.setForeground(new Color(0, 0, 0));
+        }
         if (isValid) {
             Data[1] = nameField.getText();
             Data[2] = surnameField.getText();
             Data[3] = numberField.getText();
             Data[4] = emailField.getText();
+            Data[5] = newColField.getText();
             dispose();
         }
     }
