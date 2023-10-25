@@ -5,10 +5,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
-import org.example.Controller.Add;
-import org.example.Controller.Delete;
-import org.example.Controller.Modify;
-import org.example.Controller.Search;
+import org.example.Controller.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -55,6 +52,8 @@ public class MainFrame extends JFrame {
         String dbURL = "jdbc:derby:WORKERS;create=true";
         con = DriverManager.getConnection(dbURL);
 
+        PermissionsManager permMan = new PermissionsManager(con);
+        System.out.println(permMan.checkPassword("Cieszyn16", "haslo"));
 
         //main settings
         setContentPane(mainPanel);
