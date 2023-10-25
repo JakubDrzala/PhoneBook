@@ -216,27 +216,6 @@ public class MainFrame extends JFrame {
     }
 
     private void addNewElement(String name, String surname, String number, String email) throws SQLException {
-        /*
-
-
-
-
-
-
-
-
-
-        ADD FUNCTION
-
-
-
-
-
-
-
-
-
-        */
 
         Add addElement = new Add(con);
         addElement.insert(name,surname,number,email);
