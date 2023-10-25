@@ -44,6 +44,7 @@ public class MainFrame extends JFrame {
     private JLabel search_name;
 
     private Connection con;
+    private boolean editAbleTable;
 
     public MainFrame() throws SQLException {
 	Login loginFrame = new Login();
@@ -52,11 +53,25 @@ public class MainFrame extends JFrame {
 
         if (loginFrame.exit) System.exit(0);
 
+        String login = loginFrame.getLogin();
+        String password = loginFrame.getPassword();
+
         String dbURL = "jdbc:derby:WORKERS;create=true";
         con = DriverManager.getConnection(dbURL);
 
         PermissionsManager permMan = new PermissionsManager(con);
-        System.out.println(permMan.checkPassword("Cieszyn16", "haslo"));
+        String typeOfUser = permMan.checkPassword(login, password);
+
+        switch (typeOfUser){
+            case "ADMIN":
+                runAdmin();
+                break;
+            case "USER":
+                break;
+            case "EXIT":
+            default:
+                System.exit(0);
+        }
 
         //main settings
         setContentPane(mainPanel);
@@ -88,30 +103,7 @@ public class MainFrame extends JFrame {
         comboBoxLaunguage.addItemListener(itemEvent -> setTexts());
 
 
-        addNewButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Dialog addDialog = new Dialog(comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex()));
-                addDialog.pack();
-                addDialog.setVisible(true);
 
-                Object[] newRow = addDialog.getValues();
-
-                try {
-
-                    if(!addDialog.isCancel)
-                    addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                try {
-                    getData();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                updateTable();
-            }
-        });
         clearFilters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -152,6 +144,34 @@ public class MainFrame extends JFrame {
                 find();
             }
         });
+    }
+
+    private void runAdmin(){
+        addNewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dialog addDialog = new Dialog(comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex()));
+                addDialog.pack();
+                addDialog.setVisible(true);
+
+                Object[] newRow = addDialog.getValues();
+
+                try {
+
+                    if(!addDialog.isCancel)
+                        addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    getData();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                updateTable();
+            }
+        });
+        editAbleTable = false;
     }
 
     private void find(){
@@ -231,10 +251,12 @@ public class MainFrame extends JFrame {
     private void updateTable() {
         table1.setModel(new DefaultTableModel(tableData, columnNames));
         //add buttons to table
-        table1.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
-        table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
-        table1.getColumnModel().getColumn(6).setCellRenderer(new ButtonRenderer());
-        table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
+        if (editAbleTable) {
+            table1.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
+            table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
+            table1.getColumnModel().getColumn(6).setCellRenderer(new ButtonRenderer());
+            table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
+        }
         table1.setPreferredScrollableViewportSize(table1.getPreferredSize());
         table1.getColumnModel().getColumn(0).setMaxWidth(40);
         table1.getColumnModel().getColumn(1).setPreferredWidth(120);
