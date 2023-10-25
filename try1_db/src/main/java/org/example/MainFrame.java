@@ -49,6 +49,12 @@ public class MainFrame extends JFrame {
     private Connection con;
 
     public MainFrame() throws SQLException {
+	Login loginFrame = new Login();
+        loginFrame.pack();
+        loginFrame.setVisible(true);
+
+        if (loginFrame.exit) System.exit(0);
+
         String dbURL = "jdbc:derby:WORKERS;create=true";
         con = DriverManager.getConnection(dbURL);
 
@@ -110,34 +116,57 @@ public class MainFrame extends JFrame {
                 updateTable();
             }
         });
-        searchShowButton.addActionListener(new ActionListener() {
+        clearFilters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (popUpSearch.isVisible()) {
-                    popUpSearch.setVisible(false);
-                    findButton.setVisible(false);
-                    searchShowButton.setText("Search");
-                } else {
-                    popUpSearch.setVisible(true);
-                    findButton.setVisible(true);
-                    searchShowButton.setText("Hide");
-                }
+                nameSearchInput.setText("");
+                surnameSearchInput.setText("");
+                numberSearchInput.setText("");
+                emailSearchInput.setText("");
             }
         });
         findButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = nameSearchInput.getText();
-                String surname = surnameSearchInput.getText();
-                String number = numberSearchInput.getText();
-                String email = emailSearchInput.getText();
-                try {
-                    search(name, surname, number, email);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                find();
             }
         });
+	nameSearchInput.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                find();
+            }
+        });
+        surnameSearchInput.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                find();
+            }
+        });
+        numberSearchInput.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                find();
+            }
+        });
+        emailSearchInput.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                find();
+            }
+        });
+    }
+
+    private void find(){
+        String name = nameSearchInput.getText();
+        String surname = surnameSearchInput.getText();
+        String number = numberSearchInput.getText();
+        String email = emailSearchInput.getText();
+        try {
+            search(name, surname, number, email);
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     private void getData() throws SQLException {
@@ -154,15 +183,6 @@ public class MainFrame extends JFrame {
         tableData = DATA;
     }
 
-    private void getData(final Object[][] DATA) {
-        //cutting DATA
-
-
-
-        tableData = Arrays.copyOfRange(DATA, 0, DATA.length);
-
-    }
-
     private void setTexts() {
         Locale locale = (Locale) comboBoxLaunguage.getItemAt(comboBoxLaunguage.getSelectedIndex());
         resourceBundle = ResourceBundle.getBundle("Bundle", locale);
@@ -170,13 +190,16 @@ public class MainFrame extends JFrame {
         addNewButton.setText(resourceBundle.getString("add.new"));
 
 
-        if (popUpSearch.isVisible()) searchShowButton.setText(resourceBundle.getString("hide"));
-        else searchShowButton.setText(resourceBundle.getString("search"));
+        clearFilters.setText(resourceBundle.getString("clearFilter"));
 
         findButton.setText(resourceBundle.getString("find"));
         launguageLabel.setText(resourceBundle.getString("language"));
         columnNames = new String[]{"id", resourceBundle.getString("name"),
-                resourceBundle.getString("surname"), resourceBundle.getString("number"), resourceBundle.getString("email"), "edit", "delete"};
+                resourceBundle.getString("surname"),
+                resourceBundle.getString("number"),
+                resourceBundle.getString("email"),
+                resourceBundle.getString("edit"),
+                resourceBundle.getString("delete")};
         updateTable();
         search_name.setText(resourceBundle.getString("name"));
         search_surname.setText(resourceBundle.getString("surname"));
@@ -212,9 +235,9 @@ public class MainFrame extends JFrame {
         table1.setModel(new DefaultTableModel(tableData, columnNames));
         //add buttons to table
         table1.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
-        table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, columnNames[5]));
+        table1.getColumnModel().getColumn(5).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "edit"));
         table1.getColumnModel().getColumn(6).setCellRenderer(new ButtonRenderer());
-        table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, columnNames[6]));
+        table1.getColumnModel().getColumn(6).setCellEditor(new ButtonEditor(new JCheckBox(), table1, "delete"));
         table1.setPreferredScrollableViewportSize(table1.getPreferredSize());
         table1.getColumnModel().getColumn(0).setMaxWidth(40);
         table1.getColumnModel().getColumn(1).setPreferredWidth(120);
