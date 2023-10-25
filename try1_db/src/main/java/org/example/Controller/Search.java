@@ -16,9 +16,9 @@ public class Search extends DatabaseExtentsion {
 
         boolean isNull = true;
         //i am to lazy to use tokenization so i will make sure that each input is the same as data in db
-        for(String input : inputs){
-            input = input.toUpperCase();
-            if (!input.equals("")){
+        for(int x = 0; x < inputs.size(); x++){
+            inputs.set(x, inputs.get(x).toUpperCase());
+            if (!inputs.get(x).equals("")){
                 isNull = false;
             }
         }
@@ -66,10 +66,9 @@ public class Search extends DatabaseExtentsion {
 //        do
         while(rs.next()){
             out[y][0] = rs.getInt(1);
-            out[y][1] = rs.getString(2);
-            out[y][2] = rs.getString(3);
-            out[y][3] = rs.getString(4);
-            out[y][4] = rs.getString(5);
+            for(int x = 1; x < 5; x++){
+                out[y][x] = rs.getString(x + 1);
+            }
             out[y][5] = "edit";
             out[y][6] = "delete";
             y++;
