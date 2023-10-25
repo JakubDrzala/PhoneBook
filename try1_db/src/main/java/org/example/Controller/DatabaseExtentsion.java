@@ -1,5 +1,6 @@
 package org.example.Controller;
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,11 @@ public abstract class DatabaseExtentsion {
         rowCount = rs.getRow();
         rs.beforeFirst();
         return rowCount;
+    }
+    public void executeQuerry(String querry) throws SQLException {
+        Statement stm = getCon().createStatement();
+        stm.execute(querry);
+        stm.close();
     }
 
     public void printResult(String querry) throws SQLException { //printing given result for debuging

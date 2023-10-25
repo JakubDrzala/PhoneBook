@@ -22,9 +22,6 @@ public class Delete extends DatabaseExtentsion{
     }
 
     public void delete() throws SQLException{
-        String del_query = "delete from employees where id="+id+"";
-        stm = getCon().createStatement();
-        stm.execute(del_query);
-        stm.close();
+        executeQuerry("delete from employees where id="+id+"");
     }
 }
