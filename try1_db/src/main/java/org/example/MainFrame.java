@@ -153,7 +153,6 @@ public class MainFrame extends JFrame {
 
         //cutting DATA
         tableData = DATA;
-
     }
 
     private void getData(final Object[][] DATA) {

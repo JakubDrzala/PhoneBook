@@ -60,7 +60,7 @@ public class Search extends DatabaseExtentsion {
         String querry = querryBuilder(inputs); //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
 
-        printResult(querry);
+        System.out.println(querry);
 
         Object[][] out = new Object[getRowCount(rs)][7];
 
