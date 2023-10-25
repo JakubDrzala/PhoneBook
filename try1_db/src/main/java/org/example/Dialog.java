@@ -23,17 +23,17 @@ public class Dialog extends JDialog {
     private JLabel surnameLabel;
     private JLabel numberLabel;
     private JLabel emailLabel;
-    private JTextField newColField;
-    private JLabel newColLabel;
+    private JTextField professionField;
+    private JLabel professionLabel;
     private Object[] Data;
     private String nameRegex = "\\b[A-Z]{1}[a-zA-Z.'-]+";
     private String phoneNumberRegex = "\\+[0-9]{10,15}";
     private String mailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
-    private String newColRegex = "^[a-zA-Z.'-]+";
+    private String professionRegex = "\\b[a-zA-Z][a-zA-Z\\s.'-]+";
     boolean isCancel = false;
 
     public Dialog(Object index) {
-        this.Data = new Object[]{null, "", "", "", "", "edit", "delete"};
+        this.Data = new Object[]{null, "", "", "", "","", "edit", "delete"};
         setTexts(index);
         start();
     }
@@ -45,7 +45,8 @@ public class Dialog extends JDialog {
         surnameField.setText(Data[2].toString());
         numberField.setText(Data[3].toString());
         emailField.setText(Data[4].toString());
-        newColField.setText(Data[5].toString());
+        if(Data[5] == null) Data[5] = "";
+        professionField.setText(Data[5].toString());
         start();
     }
 
@@ -92,6 +93,8 @@ public class Dialog extends JDialog {
         surnameLabel.setText(resourceBundle.getString("surname"));
         numberLabel.setText(resourceBundle.getString("number"));
         emailLabel.setText(resourceBundle.getString("email"));
+        professionLabel.setText(resourceBundle.getString("profession"));
+        buttonCancel.setText(resourceBundle.getString("cancel"));
     }
 
     private void onOK() {
@@ -120,18 +123,18 @@ public class Dialog extends JDialog {
         } else {
             emailLabel.setForeground(new Color(0, 0, 0));
         }
-        if (!newColField.getText().matches(newColRegex)) {
+        if (!professionField.getText().matches(professionRegex)) {
             isValid = false;
-            newColLabel.setForeground(new Color(255, 0, 0));
+            professionLabel.setForeground(new Color(255, 0, 0));
         } else {
-            newColLabel.setForeground(new Color(0, 0, 0));
+            professionLabel.setForeground(new Color(0, 0, 0));
         }
         if (isValid) {
             Data[1] = nameField.getText();
             Data[2] = surnameField.getText();
             Data[3] = numberField.getText();
             Data[4] = emailField.getText();
-            Data[5] = newColField.getText();
+            Data[5] = professionField.getText();
             dispose();
         }
     }

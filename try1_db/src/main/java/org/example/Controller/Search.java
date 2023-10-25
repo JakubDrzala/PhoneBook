@@ -89,7 +89,7 @@ public class Search extends DatabaseExtentsion {
             out[y][2] = rs.getString(3);
             out[y][3] = rs.getString(4);
             out[y][4] = rs.getString(5);
-            out[y][5] = rs.getString(5);
+            out[y][5] = rs.getObject(6);
             out[y][6] = "edit";
             out[y][7] = "delete";
             y++;

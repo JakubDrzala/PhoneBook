@@ -33,16 +33,16 @@ public class  MainFrame extends JFrame {
     private JScrollPane dataPanel;
     private JLabel launguageLabel;
     private JLabel titleLabel;
-    private JButton findButton;
     private static ResourceBundle resourceBundle;
     private Object[][] tableData;
-    private String[] columnNames = {"id", "Name", "Surname", "Phone Number", "e-mail","newCol", "edit", "delete"};
+    private String[] columnNames = {"id", "Name", "Surname", "Phone Number", "e-mail", "Profession", "edit", "delete"};
     private Object[] sortBy = {0, "ascending"};
     private JLabel search_email;
     private JLabel search_number;
     private JLabel search_surname;
     private JLabel search_name;
-    private JTextField newColSearchInput;
+    private JTextField professionSearchInput;
+    private JLabel search_profession;
 
     private Connection con;
     private boolean editAbleTable = false;
@@ -113,11 +113,7 @@ public class  MainFrame extends JFrame {
                 surnameSearchInput.setText("");
                 numberSearchInput.setText("");
                 emailSearchInput.setText("");
-            }
-        });
-        findButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+                professionSearchInput.setText("");
                 find();
             }
         });
@@ -146,6 +142,13 @@ public class  MainFrame extends JFrame {
                 find();
             }
         });
+        professionSearchInput.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                find();
+            }
+        });
+
     }
 
     private void runAdmin(){
@@ -161,7 +164,7 @@ public class  MainFrame extends JFrame {
                 try {
 
                     if(!addDialog.isCancel)
-                        addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString());
+                        addNewElement(newRow[1].toString(), newRow[2].toString(), newRow[3].toString(), newRow[4].toString(),newRow[5].toString());
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -181,9 +184,9 @@ public class  MainFrame extends JFrame {
         String surname = surnameSearchInput.getText();
         String number = numberSearchInput.getText();
         String email = emailSearchInput.getText();
-        String newCol = newColSearchInput.getText();
+        String profession = professionSearchInput.getText();
         try {
-            search(name, surname, number, email, newCol);
+            search(name, surname, number, email, profession);
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
@@ -211,14 +214,12 @@ public class  MainFrame extends JFrame {
 
 
         clearFilters.setText(resourceBundle.getString("clearFilter"));
-
-        findButton.setText(resourceBundle.getString("find"));
         launguageLabel.setText(resourceBundle.getString("language"));
         columnNames = new String[]{"id", resourceBundle.getString("name"),
                 resourceBundle.getString("surname"),
                 resourceBundle.getString("number"),
                 resourceBundle.getString("email"),
-                "newCol",
+                resourceBundle.getString("profession"),
                 resourceBundle.getString("edit"),
                 resourceBundle.getString("delete")};
         updateTable();
@@ -226,17 +227,18 @@ public class  MainFrame extends JFrame {
         search_surname.setText(resourceBundle.getString("surname"));
         search_number.setText(resourceBundle.getString("number"));
         search_email.setText(resourceBundle.getString("email"));
+        search_profession.setText(resourceBundle.getString("profession"));
         titleLabel.setText(resourceBundle.getString("app.title"));
     }
 
-    private void search(String name, String surname, String number, String email, String newCol) throws SQLException {
+    private void search(String name, String surname, String number, String email, String profession) throws SQLException {
         Search search = new Search(con);
         List<String> inputs = new ArrayList<>();
         inputs.add(name);
         inputs.add(surname);
         inputs.add(number);
         inputs.add(email);
-        inputs.add(newCol);
+        inputs.add(profession);
 
         final Object[][] DATA = search.searchFor(inputs);           //here must DATA
 
@@ -244,10 +246,10 @@ public class  MainFrame extends JFrame {
         updateTable();     //update with new DATA
     }
 
-    private void addNewElement(String name, String surname, String number, String email) throws SQLException {
+    private void addNewElement(String name, String surname, String number, String email, String profession) throws SQLException {
 
         Add addElement = new Add(con);
-        addElement.insert(name,surname,number,email);
+        addElement.insert(name,surname,number,email,profession);
 
         getData();
         updateTable();
@@ -459,7 +461,7 @@ public class  MainFrame extends JFrame {
             Modify modify = new Modify(con);
             modify.setId(Integer.parseInt(newRow[0].toString()));
             try{
-                modify.modify(newRow[1].toString(),newRow[2].toString(),newRow[3].toString(),newRow[4].toString());
+                modify.modify(newRow[1].toString(),newRow[2].toString(),newRow[3].toString(),newRow[4].toString(),newRow[5].toString());
             }catch (Exception error){
                 System.out.println(error);
             }
@@ -579,9 +581,6 @@ public class  MainFrame extends JFrame {
         popUpSearch.add(surnameSearchInput, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         nameSearchInput = new JTextField();
         popUpSearch.add(nameSearchInput, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        findButton = new JButton();
-        findButton.setText("Find");
-        popUpSearch.add(findButton, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final Spacer spacer4 = new Spacer();
         menuPanel.add(spacer4, cc.xy(9, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         final Spacer spacer5 = new Spacer();
