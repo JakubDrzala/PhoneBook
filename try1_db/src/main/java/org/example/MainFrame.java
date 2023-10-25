@@ -11,7 +11,6 @@ import org.example.Controller.Modify;
 import org.example.Controller.Search;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
@@ -209,7 +208,7 @@ public class MainFrame extends JFrame {
         inputs.add(number);
         inputs.add(email);
 
-        final Object[][] DATA = search.search(inputs);           //here must DATA
+        final Object[][] DATA = search.searchFor(inputs);           //here must DATA
 
         getData(DATA);                          //cutting new DATA after searching
         updateTable();     //update with new DATA

@@ -1,7 +1,6 @@
 package org.example.Controller;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Search extends DatabaseExtentsion {
@@ -32,10 +31,14 @@ public class Search extends DatabaseExtentsion {
                 for (int x = 0; x < inputs.size(); x++) {
                     if (inputs.get(x).equals("")) { //checking if input is null, bcs if so then there is no input
                         conditions[x] = "";
-                    } else if (rs.getString(x + 2).toUpperCase().equals(inputs.get(x))) { //checking if db has exact input in itself and if so, then make statement with "="
-                        conditions[x] = rsmd.getColumnName(x + 2) + " = '" + inputs.get(x) + "'";
-                    } else { //or else it will be LIKE
-                        conditions[x] = rsmd.getColumnName(x + 2) + " LIKE '%" + inputs.get(x) + "%'";
+                    }
+                    else{
+                        conditions[x] = " UPPER(";
+                        if (rs.getString(x + 2).toUpperCase().equals(inputs.get(x))) { //checking if db has exact input in itself and if so, then make statement with "="
+                            conditions[x] += rsmd.getColumnName(x + 2) + ") = '" + inputs.get(x) + "'";
+                        } else { //or else it will be LIKE
+                            conditions[x] += rsmd.getColumnName(x + 2) + ") LIKE '%" + inputs.get(x) + "%'";
+                        }
                     }
                 }
             }
@@ -53,7 +56,7 @@ public class Search extends DatabaseExtentsion {
         return querry; //returns querry
     }
 
-    public Object[][] search(List<String> inputs) throws SQLException { //main search function
+    public Object[][] searchFor(List<String> inputs) throws SQLException { //main search function
         String querry = querryBuilder(inputs); //builds querry based on given inputs
         ResultSet rs = getResult(querry); //gets result out of querry
 
