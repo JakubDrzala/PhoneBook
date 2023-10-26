@@ -45,6 +45,7 @@ public class Login extends JDialog {
         passwordField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
+                if("Enter".equals(KeyEvent.getKeyText(e.getKeyChar())))
                 onSubmit();
             }
         });
