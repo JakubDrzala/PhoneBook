@@ -71,6 +71,7 @@ public class  MainFrame extends JFrame {
             case "USER":
                 break;
             default:
+                con.close();
                 System.exit(0);
         }
 
