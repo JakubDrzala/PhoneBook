@@ -71,6 +71,7 @@ public class  MainFrame extends JFrame {
             case "USER":
                 break;
             default:
+                con.close();
                 System.exit(0);
         }
 
@@ -78,7 +79,12 @@ public class  MainFrame extends JFrame {
         setContentPane(mainPanel);
         setTitle("test");
         setSize(800, 500);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                close();
+            }
+        });
         setVisible(true);
 
         //table settings
@@ -176,6 +182,11 @@ public class  MainFrame extends JFrame {
             }
         });
         editAbleTable = true;
+    }
+
+    private void close () throws SQLException {
+        con.close();
+        System.exit(0);
     }
 
     private void find(){
