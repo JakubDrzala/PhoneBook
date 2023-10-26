@@ -83,9 +83,12 @@ public class Search extends DatabaseExtentsion {
         int y = 0;
 //        do
         while(rs.next()){
-            for(int x = 1; x < 6; x++){
-                out[y][x] = rs.getString(x + 1);
-            }
+            out[y][0] = rs.getInt(1);
+            out[y][1] = rs.getString(2);
+            out[y][2] = rs.getString(3);
+            out[y][3] = rs.getString(4);
+            out[y][4] = rs.getString(5);
+            out[y][5] = rs.getObject(6);
             out[y][6] = "edit";
             out[y][7] = "delete";
             y++;

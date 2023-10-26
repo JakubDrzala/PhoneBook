@@ -8,10 +8,8 @@ public class PermissionsManager extends DatabaseExtentsion{
     public PermissionsManager(Connection con){ super(con); }
 
     public String checkPassword(String login, String password) throws SQLException {
-        Encrypt encrypt = new Encrypt();
-        password = encrypt.encrypt(password);
-        System.out.println(password);
-
+        Encrypt e = new Encrypt();
+        password = e.encrypt(password);
         String querry = "SELECT login, password, type FROM users";
         ResultSet rs = getResult(querry);
 
